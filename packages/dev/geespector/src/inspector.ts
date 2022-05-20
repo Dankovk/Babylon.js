@@ -33,7 +33,7 @@ export interface IPersistentPopupConfiguration {
     closeWhenActionTabsCloses?: boolean;
 }
 
-export class Geespector {
+export class Inspector {
     private static _SceneExplorerHost: Nullable<HTMLElement>;
     private static _ActionTabsHost: Nullable<HTMLElement>;
     private static _EmbedHost: Nullable<HTMLElement>;
@@ -150,11 +150,11 @@ export class Geespector {
                     options.showExplorer = true;
                     options.showInspector = false;
                     options.explorerWidth = options.popup ? "100%" : "300px";
-                    Geespector.Show(scene, options);
+                    Inspector.Show(scene, options);
                 },
                 onClose: () => {
                     ReactDOM.unmountComponentAtNode(this._SceneExplorerHost!);
-                    Geespector._OpenedPane--;
+                    Inspector._OpenedPane--;
 
                     this._RemoveElementFromDOM(this._SceneExplorerHost);
 
@@ -211,11 +211,11 @@ export class Geespector {
                     options.showExplorer = false;
                     options.showInspector = true;
                     options.inspectorWidth = options.popup ? "100%" : "300px";
-                    Geespector.Show(scene, options);
+                    Inspector.Show(scene, options);
                 },
                 onClose: () => {
                     ReactDOM.unmountComponentAtNode(this._ActionTabsHost!);
-                    Geespector._OpenedPane--;
+                    Inspector._OpenedPane--;
                     this._Cleanup();
 
                     this._RemoveElementFromDOM(this._ActionTabsHost);
@@ -273,7 +273,7 @@ export class Geespector {
                     options.showExplorer = true;
                     options.showInspector = true;
                     options.embedHostWidth = options.popup ? "100%" : "auto";
-                    Geespector.Show(scene, options);
+                    Inspector.Show(scene, options);
                 },
                 onClose: () => {
                     ReactDOM.unmountComponentAtNode(this._EmbedHost!);
@@ -403,7 +403,7 @@ export class Geespector {
 
         if (options.embedMode && options.showExplorer && options.showInspector) {
             if (options.popup) {
-                this._CreateEmbedHost(scene, options, this._CreatePopup("INSPECTOR", "_EmbedHostWindow"), Geespector.OnSelectionChangeObservable);
+                this._CreateEmbedHost(scene, options, this._CreatePopup("INSPECTOR", "_EmbedHostWindow"), Inspector.OnSelectionChangeObservable);
                 this._EmbedHostWindow.addEventListener("beforeunload", () => this._GlobalState.onSceneExplorerClosedObservable.notifyObservers());
                 this._EmbedHostWindow.addEventListener("beforeunload", () => this._GlobalState.onActionTabsClosedObservable.notifyObservers());
             } else {
@@ -428,7 +428,7 @@ export class Geespector {
                     }
                 }
 
-                this._CreateEmbedHost(scene, options, parentControl, Geespector.OnSelectionChangeObservable);
+                this._CreateEmbedHost(scene, options, parentControl, Inspector.OnSelectionChangeObservable);
             }
         } else if (options.popup) {
             if (options.showExplorer) {
@@ -515,7 +515,7 @@ export class Geespector {
     }
 
     private static _Cleanup() {
-        if (Geespector._OpenedPane !== 0) {
+        if (Inspector._OpenedPane !== 0) {
             return;
         }
 
@@ -587,7 +587,7 @@ export class Geespector {
             this._GlobalState.onSceneExplorerClosedObservable.notifyObservers();
         }
 
-        Geespector._OpenedPane = 0;
+        Inspector._OpenedPane = 0;
         this._Cleanup();
 
         if (!this._GlobalState.onPluginActivatedObserver) {
@@ -630,4 +630,4 @@ export class Geespector {
     }
 }
 
-Geespector.EarlyAttachToLoader();
+Inspector.EarlyAttachToLoader();

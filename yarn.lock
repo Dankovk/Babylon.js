@@ -1075,6 +1075,10 @@
   "resolved" "file:packages/dev/core"
   "version" "1.0.0"
 
+"@dev/geespector@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/geespector":
+  "resolved" "file:packages/dev/geespector"
+  "version" "1.0.0"
+
 "@dev/gui@^1.0.0", "@dev/gui@1.0.0", "@dev/gui@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/gui":
   "resolved" "file:packages/dev/gui"
   "version" "1.0.0"
@@ -1253,10 +1257,6 @@
 
 "@geenee/geenee-ui-components@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/geeneeUiComponents":
   "resolved" "file:packages/dev/geeneeUiComponents"
-  "version" "1.0.0"
-
-"@geenee/geespector@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/geespector":
-  "resolved" "file:packages/dev/geespector"
   "version" "1.0.0"
 
 "@geenee/ui@Geenee/geenee-ui.git#9a6f23d9ff42a60642b82c9342ef5816d675eadf":

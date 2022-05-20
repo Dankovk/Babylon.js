@@ -10,7 +10,7 @@ import type { PerformanceViewerCollector } from "core/Misc/PerformanceViewer/per
 import { PerfCollectionStrategy } from "core/Misc/PerformanceViewer/performanceViewerCollectionStrategies";
 import { Tools } from "core/Misc/tools";
 import "core/Misc/PerformanceViewer/performanceViewerSceneExtension";
-import { Geespector } from "../../../../inspector";
+import { Inspector } from "../../../../inspector";
 import { PerformanceViewerPopupComponent } from "./performanceViewerPopupComponent";
 import { ComputePressureObserverWrapper } from "core/Misc/computePressure";
 
@@ -84,7 +84,7 @@ export const PerformanceViewerComponent: React.FC<IPerformanceViewerComponentPro
 
     const startPerformanceViewerPopup = () => {
         if (performanceCollector) {
-            Geespector._CreatePersistentPopup(
+            Inspector._CreatePersistentPopup(
 
                 {
                     props: {

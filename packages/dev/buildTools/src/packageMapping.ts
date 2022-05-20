@@ -340,6 +340,7 @@ export function isValidDevPackageName(devName: string, publicOnly?: boolean): de
     });
 }
 
+
 export function isValidBuildType(buildType: string): buildType is BuildType {
     return Object.keys(packageMapping).some((localBuildType) => {
         return localBuildType === buildType;
