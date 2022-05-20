@@ -1,5 +1,5 @@
 {
-  "name": "@geenee/geespector",
+  "name": "@dev/geespector",
     "types": "dist/index",
     "main": "dist/index",
     "module": "dist/index",
