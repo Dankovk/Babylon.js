@@ -4,7 +4,7 @@ import * as INSPECTOR from "../index";
 const globalObject = typeof global !== "undefined" ? global : typeof window !== "undefined" ? window : undefined;
 if (typeof globalObject !== "undefined") {
     (<any>globalObject).BABYLON = (<any>globalObject).BABYLON || {};
-    (<any>globalObject).BABYLON.Inspector = INSPECTOR.Inspector;
+    (<any>globalObject).BABYLON.Inspector = INSPECTOR.Geespector;
     (<any>globalObject).INSPECTOR = INSPECTOR;
 }
 

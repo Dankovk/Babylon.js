@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Inspector } from "../inspector";
+import { Geespector } from "../inspector";
 
 export interface IPopupComponentProps {
     id: string;
@@ -47,7 +47,7 @@ export class PopupComponent extends React.Component<IPopupComponentProps, { isCo
 
         const windowVariableName = `window_${title}`;
 
-        this._container = Inspector._CreatePopup(title, windowVariableName, size.width, size.height, true);
+        this._container = Geespector._CreatePopup(title, windowVariableName, size.width, size.height, true);
 
         if (this._container) {
             this._host = this._container.ownerDocument!.createElement("div");
@@ -57,7 +57,7 @@ export class PopupComponent extends React.Component<IPopupComponentProps, { isCo
             this._container.appendChild(this._host);
         }
 
-        this._window = (Inspector as any)[windowVariableName];
+        this._window = (Geespector as any)[windowVariableName];
         window.addEventListener("beforeunload", this.onBeforeUnloadListener);
 
         if (this._window) {
