@@ -25,6 +25,7 @@ const friendlyNames = {
     postProcess: "Post-Process",
     proceduralTextures: "Procedural Textures",
     inspector: "Inspector",
+    geespector: "Geespector",
     nodeEditor: "Node Editor",
     guiEditor: "GUI Editor",
     playground: "Playground",

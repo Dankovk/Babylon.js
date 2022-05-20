@@ -14,7 +14,7 @@
             "path": "packages/dev/gui/tsconfig.nocomposite.json"
         },
         {
-            "path": "packages/dev/sharedUiComponents/tsconfig.nocomposite.json"
+            "path": "packages/dev/geeneeUiComponents/tsconfig.nocomposite.json"
         },
         {
             "path": "packages/tools/guiEditor/tsconfig.nocomposite.json"
@@ -39,6 +39,9 @@
         },
         {
             "path": "packages/dev/inspector/tsconfig.nocomposite.json"
+        },
+        {
+            "path": "packages/dev/geespector/tsconfig.nocomposite.json"
         },
         {
             "path": "packages/tools/ktx2Decoder/tsconfig.build.json"

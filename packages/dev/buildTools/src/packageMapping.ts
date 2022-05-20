@@ -11,6 +11,7 @@ export type DevPackageName =
     | "loaders"
     | "serializers"
     | "inspector"
+    | "geespector"
     | "post-processes"
     | "procedural-textures"
     | "node-editor"
@@ -27,6 +28,7 @@ export type UMDPackageName =
     | "babylonjs-materials"
     | "babylonjs-procedural-textures"
     | "babylonjs-inspector"
+    | "babylonjs-geespector"
     | "babylonjs-node-editor"
     | "babylonjs-gui-editor"
     | "babylonjs-viewer"
@@ -45,6 +47,7 @@ export type NamespacePackageName =
     | "BABYLON.NodeEditor"
     | "BABYLON.GuiEditor"
     | "INSPECTOR"
+    | "GEESPECTOR"
     | "BabylonViewer"
     | "KTX2DECODER"
     | "INSPECTOR.SharedUIComponents"
@@ -59,6 +62,7 @@ export type ES6PackageName =
     | "@babylonjs/serializers"
     | "@babylonjs/procedural-textures"
     | "@babylonjs/inspector"
+    | "@babylonjs/geespector"
     | "@babylonjs/node-editor"
     | "@babylonjs/gui-editor"
     | "@babylonjs/post-processes"
@@ -95,6 +99,11 @@ export const umdPackageMapping: { [key in UMDPackageName]: { baseDir: string; ba
     "babylonjs-inspector": {
         baseDir: "inspector",
         baseFilename: "babylon.inspector",
+        isBundle: true,
+    },
+    "babylonjs-geespector": {
+        baseDir: "geespector",
+        baseFilename: "babylon.geespector",
         isBundle: true,
     },
     "babylonjs-node-editor": {
@@ -146,6 +155,7 @@ const packageMapping: {
         loaders: "babylonjs-loaders",
         serializers: "babylonjs-serializers",
         inspector: "babylonjs-inspector",
+        geespector: "babylonjs-geespector",
         "node-editor": (_filePath?: string) => {
             // if (filePath && filePath.indexOf("sharedUiComponents") !== -1) {
             //     return "babylonjs-shared-ui-components";
