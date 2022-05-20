@@ -85,6 +85,7 @@ export const PerformanceViewerComponent: React.FC<IPerformanceViewerComponentPro
     const startPerformanceViewerPopup = () => {
         if (performanceCollector) {
             Geespector._CreatePersistentPopup(
+
                 {
                     props: {
                         id: "performance-viewer",
