@@ -1,5 +1,5 @@
 {
-    "name": "@geenee/geenee-ui-components",
+    "name": "shared-ui-components",
     "private": true,
     "version": "1.0.0",
     "types": "dist/index",

@@ -944,27 +944,27 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     "to-fast-properties" "^2.0.0"
 
-"@babylonjs/core@^5.7.0", "@babylonjs/core@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/core":
+"@babylonjs/core@^5.7.0", "@babylonjs/core@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/core":
   "resolved" "file:packages/public/@babylonjs/core"
   "version" "5.7.0"
   dependencies:
     "tslib" "^2.3.1"
 
-"@babylonjs/gui-editor@^5.7.0", "@babylonjs/gui-editor@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/gui-editor":
+"@babylonjs/gui-editor@^5.7.0", "@babylonjs/gui-editor@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/gui-editor":
   "resolved" "file:packages/public/@babylonjs/gui-editor"
   "version" "5.7.0"
   dependencies:
     "@babylonjs/core" "^5.7.0"
     "@babylonjs/gui" "^5.7.0"
 
-"@babylonjs/gui@^5.7.0", "@babylonjs/gui@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/gui":
+"@babylonjs/gui@^5.7.0", "@babylonjs/gui@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/gui":
   "resolved" "file:packages/public/@babylonjs/gui"
   "version" "5.7.0"
   dependencies:
     "@babylonjs/core" "^5.7.0"
     "tslib" "^2.3.1"
 
-"@babylonjs/inspector@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/inspector":
+"@babylonjs/inspector@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/inspector":
   "resolved" "file:packages/public/@babylonjs/inspector"
   "version" "5.7.0"
   dependencies:
@@ -978,7 +978,7 @@
     "@fortawesome/free-regular-svg-icons" "^6.0.0"
     "@fortawesome/free-solid-svg-icons" "^6.0.0"
 
-"@babylonjs/loaders@^5.7.0", "@babylonjs/loaders@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/loaders":
+"@babylonjs/loaders@^5.7.0", "@babylonjs/loaders@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/loaders":
   "resolved" "file:packages/public/@babylonjs/loaders"
   "version" "5.7.0"
   dependencies:
@@ -986,34 +986,34 @@
     "babylonjs-gltf2interface" "^5.7.0"
     "tslib" "^2.3.1"
 
-"@babylonjs/materials@^5.7.0", "@babylonjs/materials@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/materials":
+"@babylonjs/materials@^5.7.0", "@babylonjs/materials@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/materials":
   "resolved" "file:packages/public/@babylonjs/materials"
   "version" "5.7.0"
   dependencies:
     "@babylonjs/core" "^5.7.0"
     "tslib" "^2.3.1"
 
-"@babylonjs/node-editor@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/node-editor":
+"@babylonjs/node-editor@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/node-editor":
   "resolved" "file:packages/public/@babylonjs/node-editor"
   "version" "5.7.0"
   dependencies:
     "@babylonjs/core" "^5.7.0"
 
-"@babylonjs/post-processes@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/post-processes":
+"@babylonjs/post-processes@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/post-processes":
   "resolved" "file:packages/public/@babylonjs/post-processes"
   "version" "5.7.0"
   dependencies:
     "@babylonjs/core" "^5.7.0"
     "tslib" "^2.3.1"
 
-"@babylonjs/procedural-textures@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/procedural-textures":
+"@babylonjs/procedural-textures@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/procedural-textures":
   "resolved" "file:packages/public/@babylonjs/procedural-textures"
   "version" "5.7.0"
   dependencies:
     "@babylonjs/core" "^5.7.0"
     "tslib" "^2.3.1"
 
-"@babylonjs/serializers@^5.7.0", "@babylonjs/serializers@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/serializers":
+"@babylonjs/serializers@^5.7.0", "@babylonjs/serializers@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/serializers":
   "resolved" "file:packages/public/@babylonjs/serializers"
   "version" "5.7.0"
   dependencies:
@@ -1021,7 +1021,7 @@
     "babylonjs-gltf2interface" "^5.7.0"
     "tslib" "^2.3.1"
 
-"@babylonjs/test-tools@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/test-tools":
+"@babylonjs/test-tools@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/test-tools":
   "resolved" "file:packages/public/@babylonjs/test-tools"
   "version" "0.1.0"
   dependencies:
@@ -1030,7 +1030,7 @@
   optionalDependencies:
     "@alex_neo/jest-expect-message" "~1.0.5"
 
-"@babylonjs/viewer@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/@babylonjs/viewer":
+"@babylonjs/viewer@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/@babylonjs/viewer":
   "resolved" "file:packages/public/@babylonjs/viewer"
   "version" "5.7.0"
   dependencies:
@@ -1065,45 +1065,45 @@
   dependencies:
     "@cspotcode/source-map-consumer" "0.8.0"
 
-"@dev/build-tools@^1.0.0", "@dev/build-tools@1.0.0", "@dev/build-tools@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/buildTools":
+"@dev/build-tools@^1.0.0", "@dev/build-tools@1.0.0", "@dev/build-tools@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/buildTools":
   "resolved" "file:packages/dev/buildTools"
   "version" "1.0.0"
   dependencies:
     "dotenv" "^16.0.0"
 
-"@dev/core@^1.0.0", "@dev/core@1.0.0", "@dev/core@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/core":
+"@dev/core@^1.0.0", "@dev/core@1.0.0", "@dev/core@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/core":
   "resolved" "file:packages/dev/core"
   "version" "1.0.0"
 
-"@dev/gui@^1.0.0", "@dev/gui@1.0.0", "@dev/gui@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/gui":
+"@dev/gui@^1.0.0", "@dev/gui@1.0.0", "@dev/gui@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/gui":
   "resolved" "file:packages/dev/gui"
   "version" "1.0.0"
 
-"@dev/inspector@1.0.0", "@dev/inspector@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/inspector":
+"@dev/inspector@1.0.0", "@dev/inspector@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/inspector":
   "resolved" "file:packages/dev/inspector"
   "version" "1.0.0"
 
-"@dev/loaders@^1.0.0", "@dev/loaders@1.0.0", "@dev/loaders@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/loaders":
+"@dev/loaders@^1.0.0", "@dev/loaders@1.0.0", "@dev/loaders@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/loaders":
   "resolved" "file:packages/dev/loaders"
   "version" "1.0.0"
 
-"@dev/materials@^1.0.0", "@dev/materials@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/materials":
+"@dev/materials@^1.0.0", "@dev/materials@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/materials":
   "resolved" "file:packages/dev/materials"
   "version" "1.0.0"
 
-"@dev/post-processes@^1.0.0", "@dev/post-processes@1.0.0", "@dev/post-processes@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/postProcesses":
+"@dev/post-processes@^1.0.0", "@dev/post-processes@1.0.0", "@dev/post-processes@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/postProcesses":
   "resolved" "file:packages/dev/postProcesses"
   "version" "1.0.0"
 
-"@dev/procedural-textures@^1.0.0", "@dev/procedural-textures@1.0.0", "@dev/procedural-textures@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/proceduralTextures":
+"@dev/procedural-textures@^1.0.0", "@dev/procedural-textures@1.0.0", "@dev/procedural-textures@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/proceduralTextures":
   "resolved" "file:packages/dev/proceduralTextures"
   "version" "1.0.0"
 
-"@dev/serializers@^1.0.0", "@dev/serializers@1.0.0", "@dev/serializers@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/serializers":
+"@dev/serializers@^1.0.0", "@dev/serializers@1.0.0", "@dev/serializers@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/serializers":
   "resolved" "file:packages/dev/serializers"
   "version" "1.0.0"
 
-"@dev/shared-ui-components@^1.0.0", "@dev/shared-ui-components@1.0.0", "@dev/shared-ui-components@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/sharedUiComponents":
+"@dev/shared-ui-components@^1.0.0", "@dev/shared-ui-components@1.0.0", "@dev/shared-ui-components@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/sharedUiComponents":
   "resolved" "file:packages/dev/sharedUiComponents"
   "version" "1.0.0"
 
@@ -1251,11 +1251,11 @@
   "resolved" "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.3.tgz"
   "version" "1.1.3"
 
-"@geenee/geenee-ui-components@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/geeneeUiComponents":
+"@geenee/geenee-ui-components@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/geeneeUiComponents":
   "resolved" "file:packages/dev/geeneeUiComponents"
   "version" "1.0.0"
 
-"@geenee/geespector@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/dev/geespector":
+"@geenee/geespector@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/dev/geespector":
   "resolved" "file:packages/dev/geespector"
   "version" "1.0.0"
 
@@ -1591,45 +1591,60 @@
 "@leichtgewicht/ip-codec@^2.0.1":
   "version" "2.0.3"
 
-"@lts/core@^1.0.0", "@lts/core@1.0.0", "@lts/core@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/lts/core":
+"@lts/core@^1.0.0", "@lts/core@1.0.0", "@lts/core@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/lts/core":
   "resolved" "file:packages/lts/core"
   "version" "1.0.0"
 
-"@lts/gui@1.0.0", "@lts/gui@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/lts/gui":
+"@lts/gui@1.0.0", "@lts/gui@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/lts/gui":
   "resolved" "file:packages/lts/gui"
   "version" "1.0.0"
   dependencies:
     "@lts/core" "^1.0.0"
 
-"@lts/loaders@^1.0.0", "@lts/loaders@1.0.0", "@lts/loaders@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/lts/loaders":
+"@lts/loaders@^1.0.0", "@lts/loaders@1.0.0", "@lts/loaders@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/lts/loaders":
   "resolved" "file:packages/lts/loaders"
   "version" "1.0.0"
   dependencies:
     "@lts/core" "^1.0.0"
 
-"@lts/materials@^1.0.0", "@lts/materials@1.0.0", "@lts/materials@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/lts/materials":
+"@lts/materials@^1.0.0", "@lts/materials@1.0.0", "@lts/materials@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/lts/materials":
   "resolved" "file:packages/lts/materials"
   "version" "1.0.0"
   dependencies:
     "@lts/core" "^1.0.0"
 
-"@lts/post-processes@^1.0.0", "@lts/post-processes@1.0.0", "@lts/post-processes@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/lts/postProcesses":
+"@lts/post-processes@^1.0.0", "@lts/post-processes@1.0.0", "@lts/post-processes@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/lts/postProcesses":
   "resolved" "file:packages/lts/postProcesses"
   "version" "1.0.0"
   dependencies:
     "@lts/core" "^1.0.0"
 
-"@lts/procedural-textures@^1.0.0", "@lts/procedural-textures@1.0.0", "@lts/procedural-textures@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/lts/proceduralTextures":
+"@lts/procedural-textures@^1.0.0", "@lts/procedural-textures@1.0.0", "@lts/procedural-textures@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/lts/proceduralTextures":
   "resolved" "file:packages/lts/proceduralTextures"
   "version" "1.0.0"
   dependencies:
     "@lts/core" "^1.0.0"
 
-"@lts/serializers@^1.0.0", "@lts/serializers@1.0.0", "@lts/serializers@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/lts/serializers":
+"@lts/serializers@^1.0.0", "@lts/serializers@1.0.0", "@lts/serializers@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/lts/serializers":
   "resolved" "file:packages/lts/serializers"
   "version" "1.0.0"
   dependencies:
     "@lts/core" "^1.0.0"
+
+"@mapbox/node-pre-gyp@^1.0.0":
+  "integrity" "sha512-aDF3S3rK9Q2gey/WAttUlISduDItz5BU3306M9Eyv6/oS40aMprnopshtlKTykxRNIBEZuRMaZAnbrQ4QtKGyw=="
+  "resolved" "https://registry.npmjs.org/@mapbox/node-pre-gyp/-/node-pre-gyp-1.0.9.tgz"
+  "version" "1.0.9"
+  dependencies:
+    "detect-libc" "^2.0.0"
+    "https-proxy-agent" "^5.0.0"
+    "make-dir" "^3.1.0"
+    "node-fetch" "^2.6.7"
+    "nopt" "^5.0.0"
+    "npmlog" "^5.0.1"
+    "rimraf" "^3.0.2"
+    "semver" "^7.3.5"
+    "tar" "^6.1.11"
 
 "@microsoft/tsdoc-config@0.16.1":
   "integrity" "sha512-2RqkwiD4uN6MLnHFljqBlZIXlt/SaUT6cuogU1w2ARw4nKuuppSmR0+s+NC+7kXBQykd9zzu0P4HtBpZT5zBpQ=="
@@ -2011,37 +2026,37 @@
     "@swc/core-win32-ia32-msvc" "1.2.177"
     "@swc/core-win32-x64-msvc" "1.2.177"
 
-"@tools/babylon-server@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/tools/babylonServer":
+"@tools/babylon-server@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/tools/babylonServer":
   "resolved" "file:packages/tools/babylonServer"
   "version" "1.0.0"
 
-"@tools/dev-host@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/tools/devHost":
+"@tools/dev-host@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/tools/devHost":
   "resolved" "file:packages/tools/devHost"
   "version" "1.0.0"
 
-"@tools/gui-editor@1.0.0", "@tools/gui-editor@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/tools/guiEditor":
+"@tools/gui-editor@1.0.0", "@tools/gui-editor@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/tools/guiEditor":
   "resolved" "file:packages/tools/guiEditor"
   "version" "1.0.0"
   dependencies:
     "react" "^17.0.2"
     "react-dom" "^17.0.2"
 
-"@tools/ktx2decoder@1.0.0", "@tools/ktx2decoder@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/tools/ktx2Decoder":
+"@tools/ktx2decoder@1.0.0", "@tools/ktx2decoder@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/tools/ktx2Decoder":
   "resolved" "file:packages/tools/ktx2Decoder"
   "version" "1.0.0"
 
-"@tools/node-editor@1.0.0", "@tools/node-editor@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/tools/nodeEditor":
+"@tools/node-editor@1.0.0", "@tools/node-editor@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/tools/nodeEditor":
   "resolved" "file:packages/tools/nodeEditor"
   "version" "1.0.0"
   dependencies:
     "react" "^17.0.2"
     "react-dom" "^17.0.2"
 
-"@tools/playground@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/tools/playground":
+"@tools/playground@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/tools/playground":
   "resolved" "file:packages/tools/playground"
   "version" "1.0.0"
 
-"@tools/reflector@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/tools/reflector":
+"@tools/reflector@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/tools/reflector":
   "resolved" "file:packages/tools/reflector"
   "version" "0.0.1"
   dependencies:
@@ -2049,26 +2064,26 @@
     "utf-8-validate" "^5.0.4"
     "ws" "^8.5.0"
 
-"@tools/sandbox@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/tools/sandbox":
+"@tools/sandbox@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/tools/sandbox":
   "resolved" "file:packages/tools/sandbox"
   "version" "1.0.0"
   dependencies:
     "react" "^17.0.2"
     "react-dom" "^17.0.2"
 
-"@tools/test-tools@^1.0.0", "@tools/test-tools@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/tools/testTools":
+"@tools/test-tools@^1.0.0", "@tools/test-tools@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/tools/testTools":
   "resolved" "file:packages/tools/testTools"
   "version" "1.0.0"
   dependencies:
     "dotenv" "^16.0.0"
 
-"@tools/tests@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/tools/tests":
+"@tools/tests@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/tools/tests":
   "resolved" "file:packages/tools/tests"
   "version" "1.0.0"
   optionalDependencies:
     "jest-screenshot" "^0.3.5"
 
-"@tools/viewer@1.0.0", "@tools/viewer@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/tools/viewer":
+"@tools/viewer@1.0.0", "@tools/viewer@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/tools/viewer":
   "resolved" "file:packages/tools/viewer"
   "version" "1.0.0"
   dependencies:
@@ -3223,24 +3238,24 @@
     "babel-plugin-macros" "^3.1.0"
     "babel-plugin-transform-react-remove-prop-types" "^0.4.24"
 
-"babylonjs-gltf2interface@^5.7.0", "babylonjs-gltf2interface@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/glTF2Interface":
+"babylonjs-gltf2interface@^5.7.0", "babylonjs-gltf2interface@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/glTF2Interface":
   "resolved" "file:packages/public/glTF2Interface"
   "version" "5.7.0"
 
-"babylonjs-gui-editor@^5.7.0", "babylonjs-gui-editor@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs-gui-editor":
+"babylonjs-gui-editor@^5.7.0", "babylonjs-gui-editor@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs-gui-editor":
   "resolved" "file:packages/public/umd/babylonjs-gui-editor"
   "version" "5.7.0"
   dependencies:
     "babylonjs" "^5.7.0"
     "babylonjs-gui" "^5.7.0"
 
-"babylonjs-gui@^5.7.0", "babylonjs-gui@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs-gui":
+"babylonjs-gui@^5.7.0", "babylonjs-gui@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs-gui":
   "resolved" "file:packages/public/umd/babylonjs-gui"
   "version" "5.7.0"
   dependencies:
     "babylonjs" "^5.7.0"
 
-"babylonjs-inspector@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs-inspector":
+"babylonjs-inspector@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs-inspector":
   "resolved" "file:packages/public/umd/babylonjs-inspector"
   "version" "5.7.0"
   dependencies:
@@ -3251,61 +3266,61 @@
     "babylonjs-materials" "^5.7.0"
     "babylonjs-serializers" "^5.7.0"
 
-"babylonjs-ktx2decoder@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs-ktx2decoder":
+"babylonjs-ktx2decoder@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs-ktx2decoder":
   "resolved" "file:packages/public/umd/babylonjs-ktx2decoder"
   "version" "5.7.0"
   dependencies:
     "babylonjs" "^5.7.0"
 
-"babylonjs-loaders@^5.7.0", "babylonjs-loaders@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs-loaders":
+"babylonjs-loaders@^5.7.0", "babylonjs-loaders@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs-loaders":
   "resolved" "file:packages/public/umd/babylonjs-loaders"
   "version" "5.7.0"
   dependencies:
     "babylonjs" "^5.7.0"
     "babylonjs-gltf2interface" "^5.7.0"
 
-"babylonjs-materials@^5.7.0", "babylonjs-materials@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs-materials":
+"babylonjs-materials@^5.7.0", "babylonjs-materials@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs-materials":
   "resolved" "file:packages/public/umd/babylonjs-materials"
   "version" "5.7.0"
   dependencies:
     "babylonjs" "^5.7.0"
 
-"babylonjs-node-editor@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs-node-editor":
+"babylonjs-node-editor@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs-node-editor":
   "resolved" "file:packages/public/umd/babylonjs-node-editor"
   "version" "5.7.0"
   dependencies:
     "babylonjs" "^5.7.0"
 
-"babylonjs-post-process@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs-post-process":
+"babylonjs-post-process@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs-post-process":
   "resolved" "file:packages/public/umd/babylonjs-post-process"
   "version" "5.7.0"
   dependencies:
     "babylonjs" "^5.7.0"
 
-"babylonjs-procedural-textures@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs-procedural-textures":
+"babylonjs-procedural-textures@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs-procedural-textures":
   "resolved" "file:packages/public/umd/babylonjs-procedural-textures"
   "version" "5.7.0"
   dependencies:
     "babylonjs" "^5.7.0"
 
-"babylonjs-serializers@^5.7.0", "babylonjs-serializers@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs-serializers":
+"babylonjs-serializers@^5.7.0", "babylonjs-serializers@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs-serializers":
   "resolved" "file:packages/public/umd/babylonjs-serializers"
   "version" "5.7.0"
   dependencies:
     "babylonjs" "^5.7.0"
     "babylonjs-gltf2interface" "^5.7.0"
 
-"babylonjs-viewer-assets@^5.7.0", "babylonjs-viewer-assets@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/babylonjs-viewer-assets":
+"babylonjs-viewer-assets@^5.7.0", "babylonjs-viewer-assets@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/babylonjs-viewer-assets":
   "resolved" "file:packages/public/babylonjs-viewer-assets"
   "version" "5.7.0"
 
-"babylonjs-viewer@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs-viewer":
+"babylonjs-viewer@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs-viewer":
   "resolved" "file:packages/public/umd/babylonjs-viewer"
   "version" "5.7.0"
   dependencies:
     "babylonjs-gltf2interface" "^5.7.0"
 
-"babylonjs@^5.7.0", "babylonjs@file:/Users/sashadankov/WebstormProjects/Babylon.js/packages/public/umd/babylonjs":
+"babylonjs@^5.7.0", "babylonjs@file:/Users/vladislavbondarenko/Documents/Git/Babylon.js/packages/public/umd/babylonjs":
   "resolved" "file:packages/public/umd/babylonjs"
   "version" "5.7.0"
 
@@ -3544,6 +3559,15 @@
 
 "caniuse-lite@^1.0.30001332":
   "version" "1.0.30001336"
+
+"canvas@^2.5.0", "canvas@~2.9.0":
+  "integrity" "sha512-vSQti1uG/2gjv3x6QLOZw7TctfufaerTWbVe+NSduHxxLGB+qf3kFgQ6n66DSnuoINtVUjrLLIK2R+lxrBG07A=="
+  "resolved" "https://registry.npmjs.org/canvas/-/canvas-2.9.1.tgz"
+  "version" "2.9.1"
+  dependencies:
+    "@mapbox/node-pre-gyp" "^1.0.0"
+    "nan" "^2.15.0"
+    "simple-get" "^3.0.3"
 
 "caseless@~0.12.0":
   "integrity" "sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw=="
@@ -4105,6 +4129,13 @@
   "resolved" "https://registry.npmjs.org/decimal.js/-/decimal.js-10.3.1.tgz"
   "version" "10.3.1"
 
+"decompress-response@^4.2.0":
+  "integrity" "sha512-jOSne2qbyE+/r8G1VU+G/82LBs2Fs4LAsTiLSHOCOMZQl2OKZ6i8i4IyHemTe+/yIXOtTcRQMzPcgyhoFlqPkw=="
+  "resolved" "https://registry.npmjs.org/decompress-response/-/decompress-response-4.2.1.tgz"
+  "version" "4.2.1"
+  dependencies:
+    "mimic-response" "^2.0.0"
+
 "dedent@^0.7.0":
   "integrity" "sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw="
   "resolved" "https://registry.npmjs.org/dedent/-/dedent-0.7.0.tgz"
@@ -4176,6 +4207,11 @@
   "integrity" "sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg=="
   "resolved" "https://registry.npmjs.org/destroy/-/destroy-1.2.0.tgz"
   "version" "1.2.0"
+
+"detect-libc@^2.0.0":
+  "integrity" "sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w=="
+  "resolved" "https://registry.npmjs.org/detect-libc/-/detect-libc-2.0.1.tgz"
+  "version" "2.0.1"
 
 "detect-newline@^3.0.0":
   "integrity" "sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA=="
@@ -6913,7 +6949,7 @@
   dependencies:
     "yallist" "^4.0.0"
 
-"make-dir@^3.0.0":
+"make-dir@^3.0.0", "make-dir@^3.1.0":
   "integrity" "sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw=="
   "resolved" "https://registry.npmjs.org/make-dir/-/make-dir-3.1.0.tgz"
   "version" "3.1.0"
@@ -7077,6 +7113,11 @@
 "mimic-fn@^2.1.0":
   "integrity" "sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg=="
   "resolved" "https://registry.npmjs.org/mimic-fn/-/mimic-fn-2.1.0.tgz"
+  "version" "2.1.0"
+
+"mimic-response@^2.0.0":
+  "integrity" "sha512-wXqjST+SLt7R009ySCglWBCFpjUygmCIfD790/kVbiGmUgfYGuB14PiTd5DwVxSV4NcYHjzMkoj5LjQZwTQLEA=="
+  "resolved" "https://registry.npmjs.org/mimic-response/-/mimic-response-2.1.0.tgz"
   "version" "2.1.0"
 
 "min-document@^2.19.0":
@@ -7262,7 +7303,7 @@
     "ncp" "~2.0.0"
     "rimraf" "~2.4.0"
 
-"nan@^2.13.2":
+"nan@^2.13.2", "nan@^2.15.0":
   "integrity" "sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ=="
   "resolved" "https://registry.npmjs.org/nan/-/nan-2.15.0.tgz"
   "version" "2.15.0"
@@ -7303,7 +7344,7 @@
   "resolved" "https://registry.npmjs.org/node-addon-api/-/node-addon-api-3.2.1.tgz"
   "version" "3.2.1"
 
-"node-fetch@2.6.7":
+"node-fetch@^2.6.7", "node-fetch@2.6.7":
   "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
   "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
   "version" "2.6.7"
@@ -7413,7 +7454,7 @@
   dependencies:
     "path-key" "^3.0.0"
 
-"npmlog@^5.0.0":
+"npmlog@^5.0.0", "npmlog@^5.0.1":
   "integrity" "sha512-AqZtDUWOMKs1G/8lwylVjrdYgqA4d9nu8hc+0gzRxlDb1I10+FHBGMXs6aiQHFdCUUlqH99MUMuLfzWDNDtfxw=="
   "resolved" "https://registry.npmjs.org/npmlog/-/npmlog-5.0.1.tgz"
   "version" "5.0.1"
@@ -8837,6 +8878,20 @@
   "resolved" "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz"
   "version" "3.0.7"
 
+"simple-concat@^1.0.0":
+  "integrity" "sha512-cSFtAPtRhljv69IK0hTVZQ+OfE9nePi/rtJmw5UjHeVyVroEqJXP1sFztKUy1qU+xvz3u/sfYJLa947b7nAN2Q=="
+  "resolved" "https://registry.npmjs.org/simple-concat/-/simple-concat-1.0.1.tgz"
+  "version" "1.0.1"
+
+"simple-get@^3.0.3":
+  "integrity" "sha512-CQ5LTKGfCpvE1K0n2us+kuMPbk/q0EKl82s4aheV9oXjFEz6W/Y7oQFVJuU6QG77hRT4Ghb5RURteF5vnWjupA=="
+  "resolved" "https://registry.npmjs.org/simple-get/-/simple-get-3.1.1.tgz"
+  "version" "3.1.1"
+  dependencies:
+    "decompress-response" "^4.2.0"
+    "once" "^1.3.1"
+    "simple-concat" "^1.0.0"
+
 "sisteransi@^1.0.5":
   "integrity" "sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg=="
   "resolved" "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz"
@@ -9276,7 +9331,7 @@
     "inherits" "^2.0.3"
     "readable-stream" "^3.1.1"
 
-"tar@^6.0.2", "tar@^6.1.2":
+"tar@^6.0.2", "tar@^6.1.11", "tar@^6.1.2":
   "integrity" "sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA=="
   "resolved" "https://registry.npmjs.org/tar/-/tar-6.1.11.tgz"
   "version" "6.1.11"

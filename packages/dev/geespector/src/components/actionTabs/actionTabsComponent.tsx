@@ -120,12 +120,13 @@ export class ActionTabsComponent extends React.Component<IActionTabsComponentPro
     }
 
     render() {
+        console.log('GEEEPSEEeeEEEEECTOR')
         if (this.props.popupMode) {
             return (
                 <div id="actionTabs">
                     {!this.props.noHeader && (
                         <HeaderComponent
-                            title="INSPECTOR"
+                            title="INSPECTOR 3213321"
                             handleBack={true}
                             noClose={this.props.noClose}
                             noExpand={this.props.noExpand}
