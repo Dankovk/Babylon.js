@@ -31,7 +31,7 @@
     },
     "devDependencies": {
         "@dev/core": "^1.0.0",
-        "@geenee/ui": "Geenee/geenee-ui.git#9a6f23d9ff42a60642b82c9342ef5816d675eadf",
+        "@geenee/ui": "Geenee/geenee-ui.git#baef03de7c4a607d56cd7d246251d9d752a4d6e5",
         "@dev/gui": "^1.0.0",
         "@rollup/plugin-image": "^2.1.1",
         "@rollup/plugin-multi-entry": "^4.1.0",

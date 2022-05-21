@@ -13,6 +13,8 @@ import { HeaderComponent } from "../headerComponent";
 import { ToolsTabComponent } from "./tabs/toolsTabComponent";
 import type { GlobalState } from "../../components/globalState";
 import { SettingsTabComponent } from "./tabs/settingsTabComponent";
+// @ts-ignore
+import {ChevronPanel} from '@geenee/ui/dist';
 
 import "./actionTabs.scss";
 
@@ -126,7 +128,7 @@ export class ActionTabsComponent extends React.Component<IActionTabsComponentPro
                 <div id="actionTabs">
                     {!this.props.noHeader && (
                         <HeaderComponent
-                            title="INSPECTOR 3213321"
+                            title="INSPECTOR"
                             handleBack={true}
                             noClose={this.props.noClose}
                             noExpand={this.props.noExpand}
@@ -153,6 +155,21 @@ export class ActionTabsComponent extends React.Component<IActionTabsComponentPro
             }, 150);
         }
 
+        console.log({ChevronPanel})
+
+       return <ChevronPanel
+            height="80vh"
+            width="405px"
+            header="LAYERS"
+            toggleable
+            collapsed={ true }
+            onToggle={ () => {
+                console.log('toggle')
+            } }
+        >
+            Hello
+        </ChevronPanel>
+
         return (
             <Resizable
                 id="actionTabs"
@@ -164,13 +181,14 @@ export class ActionTabsComponent extends React.Component<IActionTabsComponentPro
             >
                 {!this.props.noHeader && (
                     <HeaderComponent
-                        title="INSPECTOR"
+                        title="INSPECTOR 124"
                         handleBack={true}
                         noClose={this.props.noClose}
                         noExpand={this.props.noExpand}
                         noCommands={this.props.noCommands}
                         onClose={() => this.onClose()}
                         onPopup={() => this.onPopup()}
+                        // @ts-ignore
                         onSelectionChangedObservable={this.props.globalState ? this.props.globalState.onSelectionChangedObservable : undefined}
                     />
                 )}
