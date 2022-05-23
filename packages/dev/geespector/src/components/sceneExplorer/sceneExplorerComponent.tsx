@@ -31,8 +31,11 @@ import type { TargetCamera } from "core/Cameras/targetCamera";
 import "core/Sprites/spriteSceneComponent";
 import "core/Audio/audioSceneComponent";
 import "core/PostProcesses/RenderPipeline/postProcessRenderPipelineManagerSceneComponent";
+// @ts-ignore
+import {ChevronPanel, Input} from '@geenee/ui/dist';
 
 import "./sceneExplorer.scss";
+import {ChangeEvent} from "react";
 
 interface ISceneExplorerFilterComponentProps {
     onFilter: (filter: string) => void;
@@ -46,7 +49,7 @@ export class SceneExplorerFilterComponent extends React.Component<ISceneExplorer
     render() {
         return (
             <div className="filter">
-                <input type="text" placeholder="Filter" onChange={(evt) => this.props.onFilter(evt.target.value)} />
+                <Input size={'xs'} type={"text"} placeholder="Filter" onChange={(evt: ChangeEvent<HTMLInputElement>) => this.props.onFilter(evt.target.value)} />
             </div>
         );
     }
@@ -65,7 +68,7 @@ interface ISceneExplorerComponentProps {
     onClose?: () => void;
 }
 
-export class SceneExplorerComponent extends React.Component<ISceneExplorerComponentProps, { filter: Nullable<string>; selectedEntity: any; scene: Scene }> {
+export class SceneExplorerComponent extends React.Component<ISceneExplorerComponentProps, { filter: Nullable<string>; selectedEntity: any; scene: Scene, collapsed?: boolean }> {
     private _onSelectionChangeObserver: Nullable<Observer<any>>;
     private _onSelectionRenamedObserver: Nullable<Observer<void>>;
     private _onNewSceneAddedObserver: Nullable<Observer<Scene>>;
@@ -624,29 +627,38 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
         }
 
         return (
-            <Resizable
-                tabIndex={-1}
-                id="sceneExplorer"
-                ref={this._sceneExplorerRef}
-                size={{ height: "100%" }}
-                minWidth={300}
-                maxWidth={600}
-                minHeight="100%"
-                enable={{ top: false, right: true, bottom: false, left: false, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}
-                onKeyDown={(keyEvent) => this.processKeys(keyEvent)}
+            <ChevronPanel
+                height="80vh"
+                header="SCENE EXPLORER"
+                contentPadding={"0"}
+                toggleable
+                collapsed={ this.state.collapsed }
+                onToggle={ () => this.setState({ collapsed: !this.state.collapsed })}
             >
-                {!this.props.noHeader && (
-                    <HeaderComponent
-                        title="SCENE EXPLORER"
-                        noClose={this.props.noClose}
-                        noExpand={this.props.noExpand}
-                        noCommands={this.props.noCommands}
-                        onClose={() => this.onClose()}
-                        onPopup={() => this.onPopup()}
-                    />
-                )}
-                {this.renderContent()}
-            </Resizable>
+                <Resizable
+                    tabIndex={-1}
+                    id="sceneExplorer"
+                    ref={this._sceneExplorerRef}
+                    size={{ height: "100%" }}
+                    minWidth={300}
+                    maxWidth={600}
+                    minHeight="100%"
+                    enable={{ top: false, right: true, bottom: false, left: false, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}
+                    onKeyDown={(keyEvent) => this.processKeys(keyEvent)}
+                >
+                    {/*{!this.props.noHeader && (
+                        <HeaderComponent
+                            title="SCENE EXPLORER1"
+                            noClose={this.props.noClose}
+                            noExpand={this.props.noExpand}
+                            noCommands={this.props.noCommands}
+                            onClose={() => this.onClose()}
+                            onPopup={() => this.onPopup()}
+                        />
+                    )}*/}
+                    {this.renderContent()}
+                </Resizable>
+            </ChevronPanel>
         );
     }
 }

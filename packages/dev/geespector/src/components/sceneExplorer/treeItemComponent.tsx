@@ -27,8 +27,8 @@ class TreeItemExpandableHeaderComponent extends React.Component<ITreeItemExpanda
     }
 
     render() {
-        const chevron = this.props.isExpanded ? <FontAwesomeIcon icon={faMinus} /> : <FontAwesomeIcon icon={faPlus} />;
-        const expandAll = this.props.isExpanded ? <FontAwesomeIcon icon={faCompress} /> : <FontAwesomeIcon icon={faExpandArrowsAlt} />;
+        const chevron = this.props.isExpanded ? <FontAwesomeIcon icon={faMinus} color={'black'} /> : <FontAwesomeIcon icon={faPlus} color={'black'} />;
+        const expandAll = this.props.isExpanded ? <FontAwesomeIcon icon={faCompress} color={'black'} /> : <FontAwesomeIcon icon={faExpandArrowsAlt} color={'black'} />;
 
         return (
             <div className="expandableHeader">
@@ -60,7 +60,7 @@ class TreeItemRootHeaderComponent extends React.Component<ITreeItemRootHeaderCom
             <div className="expandableHeader">
                 <div className="text">
                     <div className="arrow icon">
-                        <FontAwesomeIcon icon={faBan} />
+                        <FontAwesomeIcon icon={faBan} color={'black'}/>
                     </div>
                     <div className="text-value">{this.props.label}</div>
                 </div>

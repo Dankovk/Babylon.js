@@ -116,7 +116,7 @@ export class TreeItemSelectableComponent extends React.Component<ITreeItemSelect
         };
         const entity = this.props.entity;
 
-        const chevron = this.state.isExpanded ? <FontAwesomeIcon icon={faMinus} /> : <FontAwesomeIcon icon={faPlus} />;
+        const chevron = this.state.isExpanded ? <FontAwesomeIcon icon={faMinus} color={'black'} /> : <FontAwesomeIcon icon={faPlus} color={'black'} />;
         const children = entity.getClassName() === "MultiMaterial" ? [] : Tools.SortAndFilter(entity, entity.getChildren ? entity.getChildren() : entity.children);
         const hasChildren = children.length > 0;
 
