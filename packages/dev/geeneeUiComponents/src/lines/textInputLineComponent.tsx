@@ -4,6 +4,8 @@ import type { PropertyChangedEvent } from "../propertyChangedEvent";
 import type { LockObject } from "../tabs/propertyGrids/lockObject";
 import { conflictingValuesPlaceholder } from "./targetsProxy";
 import { InputArrowsComponent } from "./inputArrowsComponent";
+// @ts-ignore
+import {Description, Input} from "@geenee/ui/dist"
 
 export interface ITextInputLineComponentProps {
     label?: string;
@@ -168,18 +170,22 @@ export class TextInputLineComponent extends React.Component<ITextInputLineCompon
     render() {
         const value = this.state.value === conflictingValuesPlaceholder ? "" : this.state.value;
         const placeholder = this.state.value === conflictingValuesPlaceholder ? conflictingValuesPlaceholder : this.props.placeholder || "";
+        // @ts-ignore
         const step = this.props.step || (this.props.roundValues ? 1 : 0.01);
         return (
             <div className={this.props.unit !== undefined ? "textInputLine withUnits" : "textInputLine"}>
                 {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} color="black" className="icon" />}
                 {this.props.label !== undefined && (
-                    <div className="label" title={this.props.label}>
+                    <Description size={'sm'}>
                         {this.props.label}
-                    </div>
+                    </Description>
                 )}
                 <div className={`value${this.props.noUnderline === true ? " noUnderline" : ""}${this.props.arrows ? " hasArrows" : ""}${this.state.dragging ? " dragging" : ""}`}>
-                    <input
+                    <Input
+                        size={'xs'}
+                        type={this.props.numeric ? "number" : "text"}
                         value={value}
+                        placeholder={placeholder}
                         onBlur={() => {
                             if (this.props.lockObject) {
                                 this.props.lockObject.lock = false;
@@ -191,11 +197,8 @@ export class TextInputLineComponent extends React.Component<ITextInputLineCompon
                                 this.props.lockObject.lock = true;
                             }
                         }}
-                        onChange={(evt) => this.updateValue(evt.target.value)}
-                        onKeyDown={(evt) => this.onKeyDown(evt)}
-                        placeholder={placeholder}
-                        type={this.props.numeric ? "number" : "text"}
-                        step={step}
+                        onKeyDown={(evt: any) => this.onKeyDown(evt)}
+                        onChange={(evt: any) => this.updateValue(evt.target.value)}
                     />
                     {this.props.arrows && <InputArrowsComponent incrementValue={(amount) => this.incrementValue(amount)} setDragging={(dragging) => this.setState({ dragging })} />}
                 </div>

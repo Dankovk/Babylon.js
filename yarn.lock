@@ -1794,6 +1794,13 @@
   dependencies:
     "esquery" "^1.0.1"
 
+"@rollup/plugin-alias@^3.1.9":
+  "integrity" "sha512-QI5fsEvm9bDzt32k39wpOwZhVzRcL5ydcffUHMyLVaVaLeC70I8TJZ17F1z1eMoLu4E/UOcH9BWVkKpIKdrfiw=="
+  "resolved" "https://registry.npmjs.org/@rollup/plugin-alias/-/plugin-alias-3.1.9.tgz"
+  "version" "3.1.9"
+  dependencies:
+    "slash" "^3.0.0"
+
 "@rollup/plugin-image@^2.1.1":
   "integrity" "sha512-AgP4U85zuQJdUopLUCM+hTf45RepgXeTb8EJsleExVy99dIoYpt3ZlDYJdKmAc2KLkNntCDg6BPJvgJU3uGF+g=="
   "resolved" "https://registry.npmjs.org/@rollup/plugin-image/-/plugin-image-2.1.1.tgz"

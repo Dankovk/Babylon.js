@@ -7,6 +7,9 @@ import { SliderLineComponent } from "./sliderLineComponent";
 import { Tools } from "core/Misc/tools";
 import { conflictingValuesPlaceholder } from "./targetsProxy";
 import { InputArrowsComponent } from "./inputArrowsComponent";
+// @ts-ignore
+import {Input, Description} from '@geenee/ui/dist'
+
 
 interface IFloatLineComponentProps {
     label: string;
@@ -206,26 +209,25 @@ export class FloatLineComponent extends React.Component<IFloatLineComponentProps
                     <div className={this.props.additionalClass ? this.props.additionalClass + " floatLine" : "floatLine"}>
                         {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} className="icon" />}
                         {(!this.props.icon || this.props.label != "") && (
-                            <div className="label" title={this.props.label}>
+                            <Description size={'sm'}>
                                 {this.props.label}
-                            </div>
+                            </Description>
                         )}
                         <div className={className}>
-                            <input
+                            <Input
+                                size={'xs'}
                                 type={"number"}
-                                step={this.props.step || this.props.isInteger ? "1" : "0.01"}
-                                className="numeric-input"
-                                onKeyDown={(evt) => this.onKeyDown(evt)}
                                 value={value}
+                                placeholder={placeholder}
                                 onBlur={() => {
                                     this.unlock();
                                     if (this.props.onEnter) {
                                         this.props.onEnter(this._store);
                                     }
                                 }}
-                                placeholder={placeholder}
                                 onFocus={() => this.lock()}
-                                onChange={(evt) => this.updateValue(evt.target.value)}
+                                onKeyDown={(evt: any) => this.onKeyDown(evt)}
+                                onChange={(evt: any) => this.updateValue(evt.target.value)}
                             />
                             {this.props.arrows && (
                                 <InputArrowsComponent

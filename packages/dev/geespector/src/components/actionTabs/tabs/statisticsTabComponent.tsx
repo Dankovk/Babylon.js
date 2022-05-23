@@ -71,7 +71,7 @@ export class StatisticsTabComponent extends PaneComponent {
 
         return (
             <div className="pane">
-                <TextLineComponent label="Version" value={Engine.Version} color="rgb(113, 159, 255)" />
+                <TextLineComponent label="Version" value={Engine.Version} color="rgb(255, 0, 138)" />
                 <ValueLineComponent label="FPS" value={engine.getFps()} fractionDigits={0} />
                 <PerformanceViewerComponent scene={scene} />
                 <LineContainerComponent title="COUNT">

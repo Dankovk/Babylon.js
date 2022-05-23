@@ -1,6 +1,8 @@
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+// @ts-ignore
+import { Description } from "@geenee/ui/dist"
 
 export interface IBooleanLineComponentProps {
     label: string;
@@ -15,15 +17,15 @@ export class BooleanLineComponent extends React.Component<IBooleanLineComponentP
     }
 
     render() {
-        const check = this.props.value ? <FontAwesomeIcon icon={faCheck} /> : <FontAwesomeIcon icon={faTimesCircle} />;
+        const check = this.props.value ? <FontAwesomeIcon color={'rgb(255, 0, 138)'} icon={faCheck} /> : <FontAwesomeIcon icon={faTimesCircle} />;
         const className = this.props.value ? "value check" : "value uncheck";
 
         return (
             <div className="textLine">
                 {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} className="icon" />}
-                <div className="label" title={this.props.label}>
+                <Description size={'sm'}>
                     {this.props.label}
-                </div>
+                </Description>
                 <div className={className}>{check}</div>
             </div>
         );

@@ -2,6 +2,8 @@ import * as React from "react";
 import { DataStorage } from "core/Misc/dataStorage";
 import type { ISelectedLineContainer } from "./iSelectedLineContainer";
 import downArrow from "./downArrow.svg";
+// @ts-ignore
+import { Description } from '@geenee/ui/dist';
 
 interface ILineContainerComponentProps {
     selection?: ISelectedLineContainer;
@@ -31,8 +33,11 @@ export class LineContainerComponent extends React.Component<ILineContainerCompon
         const className = this.state.isExpanded ? "collapse" : "collapse closed";
 
         return (
-            <div className="header" onClick={() => this.switchExpandedState()}>
-                <div className="title">{this.props.title}</div>
+            <div className="header" onClick={() => this.switchExpandedState()} style={!this.state.isExpanded && {borderRadius: '10px'} || {}}>
+                {/*<div className="title">{this.props.title}</div>*/}
+                <Description size="sm" weight="bold">
+                    {this.props.title}
+                </Description>
                 <div className={className}>
                     <img className="img" title={this.props.title} src={downArrow} />
                 </div>

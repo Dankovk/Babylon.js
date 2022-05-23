@@ -31,7 +31,7 @@ interface IActionTabsComponentProps {
     initialTab?: DebugLayerTab;
 }
 
-export class ActionTabsComponent extends React.Component<IActionTabsComponentProps, { selectedEntity: any; selectedIndex: number }> {
+export class ActionTabsComponent extends React.Component<IActionTabsComponentProps, { selectedEntity: any; selectedIndex: number, collapsed?: boolean }> {
     private _onSelectionChangeObserver: Nullable<Observer<any>>;
     private _onTabChangedObserver: Nullable<Observer<any>>;
     private _once = true;
@@ -122,7 +122,6 @@ export class ActionTabsComponent extends React.Component<IActionTabsComponentPro
     }
 
     render() {
-        console.log('GEEEPSEEeeEEEEECTOR')
         if (this.props.popupMode) {
             return (
                 <div id="actionTabs">
@@ -155,19 +154,24 @@ export class ActionTabsComponent extends React.Component<IActionTabsComponentPro
             }, 150);
         }
 
-        console.log({ChevronPanel})
-
        return <ChevronPanel
             height="80vh"
-            width="405px"
             header="LAYERS"
+            contentPadding={"0"}
             toggleable
-            collapsed={ true }
-            onToggle={ () => {
-                console.log('toggle')
-            } }
+            collapsed={ this.state.collapsed }
+            onToggle={ () => this.setState({ collapsed: !this.state.collapsed })}
         >
-            Hello
+           <Resizable
+               id="actionTabs"
+               minWidth={300}
+               maxWidth={600}
+               size={{ height: "100%" }}
+               minHeight="100%"
+               enable={{ top: false, right: false, bottom: false, left: true, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}
+           >
+               {this.renderContent()}
+           </Resizable>
         </ChevronPanel>
 
         return (

@@ -2,6 +2,7 @@ import scss from "rollup-plugin-scss";
 import typescript from "@rollup/plugin-typescript";
 import multi from "@rollup/plugin-multi-entry";
 import image from "@rollup/plugin-image";
+import alias from '@rollup/plugin-alias';
 
 export default {
     input: {
@@ -19,5 +20,10 @@ export default {
         image(),
         typescript({ tsconfig: "./tsconfig.build.json", outputToFilesystem: true, declarationDir: "." }),
         scss(), // will output compiled styles to output.css
+        alias({
+            entries: [
+                { find: '@geenee/ui', replacement: '../../../../one/geenee-ui' },
+            ]
+        })
     ],
 };

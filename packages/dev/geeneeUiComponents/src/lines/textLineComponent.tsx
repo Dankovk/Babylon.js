@@ -1,4 +1,6 @@
 import * as React from "react";
+// @ts-ignore
+import {Description} from '@geenee/ui/dist';
 
 interface ITextLineComponentProps {
     label?: string;
@@ -44,9 +46,9 @@ export class TextLineComponent extends React.Component<ITextLineComponentProps> 
             );
         }
         return (
-            <div className="value" title={this.props.value} style={{ color: this.props.color ? this.props.color : "" }}>
+            <Description size={"sm"} style={{ color: this.props.color ? this.props.color : "" }}>
                 {this.props.value || "no name"}
-            </div>
+            </Description>
         );
     }
 
@@ -54,9 +56,9 @@ export class TextLineComponent extends React.Component<ITextLineComponentProps> 
         return (
             <div className={this.props.underline ? "textLine underline" : "textLine" + (this.props.additionalClass ? " " + this.props.additionalClass : "")}>
                 {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} className="icon" />}
-                <div className="label" title={this.props.tooltip ?? this.props.label ?? ""}>
+                <Description size={'sm'}>
                     {this.props.label ?? ""}
-                </div>
+                </Description>
                 {this.renderContent()}
             </div>
         );

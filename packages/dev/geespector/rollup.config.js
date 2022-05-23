@@ -1,6 +1,7 @@
 import scss from "rollup-plugin-scss";
 import typescript from "@rollup/plugin-typescript";
 import image from "@rollup/plugin-image";
+import alias from '@rollup/plugin-alias';
 
 export default (cliArgs) => {
     // serve instead of build. watch is turned on using CLI args
@@ -36,6 +37,11 @@ export default (cliArgs) => {
                 image(),
                 typescript({ tsconfig: "./tsconfig.build.json", outputToFilesystem: true, declarationDir: "." }),
                 scss(), // will output compiled styles to output.css
+                alias({
+                    entries: [
+                        { find: '@geenee/ui', replacement: '../../../../one/geenee-ui' },
+                    ]
+                })
             ],
         };
     }
@@ -69,6 +75,11 @@ export default (cliArgs) => {
             image(),
             typescript({ tsconfig: "./tsconfig.build.json", outputToFilesystem: true, declarationDir: "." }),
             scss(), // will output compiled styles to output.css
+            alias({
+                entries: [
+                    { find: '@geenee/ui', replacement: '../../../../one/geenee-ui' },
+                ]
+            })
         ],
     };
     return bundle;

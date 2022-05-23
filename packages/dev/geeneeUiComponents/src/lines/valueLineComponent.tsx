@@ -1,4 +1,6 @@
 import * as React from "react";
+// @ts-ignore
+import {Description} from '@geenee/ui/dist';
 
 interface IValueLineComponentProps {
     label: string;
@@ -22,12 +24,12 @@ export class ValueLineComponent extends React.Component<IValueLineComponentProps
         return (
             <div className="textLine">
                 {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} className="icon" />}
-                <div className="label" title={this.props.label}>
+                <Description size={'sm'}>
                     {this.props.label}
-                </div>
-                <div className="value" style={{ color: this.props.color ? this.props.color : "" }}>
+                </Description>
+                <Description size={'sm'} style={{ color: this.props.color ? this.props.color : "" }}>
                     {value}
-                </div>
+                </Description>
             </div>
         );
     }

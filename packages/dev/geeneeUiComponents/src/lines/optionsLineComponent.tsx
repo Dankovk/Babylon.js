@@ -2,6 +2,8 @@ import * as React from "react";
 import type { Observable } from "core/Misc/observable";
 import type { PropertyChangedEvent } from "../propertyChangedEvent";
 import type { IInspectableOptions } from "core/Misc/iInspectable";
+// @ts-ignore
+import { Select, Description } from '@geenee/ui/dist'
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const Null_Value = Number.MAX_SAFE_INTEGER;
@@ -89,19 +91,16 @@ export class OptionsLineComponent extends React.Component<IOptionsLineComponentP
         return (
             <div className="listLine">
                 {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} color="black" className="icon" />}
-                <div className="label" title={this.props.label}>
+                <Description size={'sm'}>
                     {this.props.label}
-                </div>
-                <div className="options">
-                    <select onChange={(evt) => this.updateValue(evt.target.value)} value={this.state.value ?? ""}>
-                        {this.props.options.map((option, i) => {
-                            return (
-                                <option selected={option.selected} key={option.label + i} value={option.value} title={option.label}>
-                                    {option.label}
-                                </option>
-                            );
-                        })}
-                    </select>
+                </Description>
+                <div className="options" style={{minWidth: '80px'}}>
+                    <Select
+                        size='xs'
+                        value={ this.props.options.find((item) => item.value === this.state.value) }
+                        options={ this.props.options }
+                        onChange={ ({ value }: {value: any}) => this.updateValue(value) }
+                    />
                 </div>
             </div>
         );

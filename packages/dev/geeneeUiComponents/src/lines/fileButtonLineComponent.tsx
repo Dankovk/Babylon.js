@@ -1,4 +1,6 @@
 import * as React from "react";
+// @ts-ignore
+import {Button} from "@geenee/ui/dist"
 
 interface IFileButtonLineComponentProps {
     label: string;
@@ -32,7 +34,8 @@ export class FileButtonLineComponent extends React.Component<IFileButtonLineComp
             <div className="buttonLine">
                 {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} className="icon" />}
                 <label htmlFor={"file-upload" + this._id} className="file-upload">
-                    {this.props.label}
+                    <Button style={{pointerEvents: 'none'}}>
+                        {this.props.label}</Button>
                 </label>
                 <input ref={this._uploadInputRef} id={"file-upload" + this._id} type="file" accept={this.props.accept} onChange={(evt) => this.onChange(evt)} />
             </div>

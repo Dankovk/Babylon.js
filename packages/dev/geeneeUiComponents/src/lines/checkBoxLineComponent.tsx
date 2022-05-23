@@ -4,6 +4,8 @@ import type { PropertyChangedEvent } from "./../propertyChangedEvent";
 import type { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { conflictingValuesPlaceholder } from "./targetsProxy";
+// @ts-ignore
+import { Description, Switch } from '@geenee/ui/dist'
 
 export interface ICheckBoxLineComponentProps {
     label?: string;
@@ -111,14 +113,15 @@ export class CheckBoxLineComponent extends React.Component<ICheckBoxLineComponen
 
     render() {
         const icons = this.props.large ? Icons.size40 : Icons.size30;
+        // @ts-ignore
         const icon = this.state.isConflict ? icons.mixed : this.state.isSelected ? icons.on : icons.off;
         return (
             <div className="checkBoxLine">
                 {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} className="icon" />}
                 {this.props.label && (
-                    <div className="label" title={this.props.iconLabel}>
+                    <Description size={'sm'} className="label">
                         {this.props.label}
-                    </div>
+                    </Description>
                 )}
                 {this.props.faIcons && (
                     <FontAwesomeIcon
@@ -127,20 +130,13 @@ export class CheckBoxLineComponent extends React.Component<ICheckBoxLineComponen
                         onClick={() => !this.props.disabled && this.onChange()}
                     />
                 )}
-                {!this.props.faIcons && (
-                    <div className="checkBox">
-                        <label className={`container lbl${this.props.disabled ? " disabled" : ""} ${this.state.isSelected ? "checked" : ""}`}>
-                            <input
-                                type="checkbox"
-                                className={`cbx hidden ${this.state.isConflict ? "conflict" : ""}`}
-                                checked={this.state.isSelected}
-                                onChange={() => this.onChange()}
-                                disabled={!!this.props.disabled}
-                            />
-                            <img className="icon" src={icon} alt={this.props.label} />
-                        </label>
-                    </div>
-                )}
+                {!this.props.faIcons && (<Switch
+                    size="lg"
+                    descriptionSize="sm"
+                    disabled={!!this.props.disabled}
+                    checked={this.state.isSelected}
+                    onChange={() => this.onChange()}
+                />)}
             </div>
         );
     }

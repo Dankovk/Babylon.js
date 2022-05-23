@@ -12,13 +12,12 @@ $line-padding-left: 2px;
 }
 
 #actionTabs {
-    background: #333333;
+    //background: #333333;
     height: 100%;
     margin: 0;
     padding: 0;
     display: grid;
     grid-template-rows: auto 1fr;
-    font: 14px "Arial";
     overflow: hidden;
 
     .hoverIcon:hover {
@@ -91,7 +90,6 @@ $line-padding-left: 2px;
         display: grid;
         grid-row: 2;
         grid-template-rows: 40px 1fr;
-        font: 14px "Arial";
         overflow: hidden;
 
         .labels {
@@ -99,28 +97,32 @@ $line-padding-left: 2px;
             display: flex;
             align-items: center;
             justify-items: center;
-            border-bottom: 1px solid #ffffff;
+            border-bottom: 1px solid #000;
             margin: 0;
             padding: 0;
 
             .label {
                 font-size: 24px;
-                color: white;
+                //color: white;
                 width: 40px;
                 display: flex;
                 align-content: center;
                 justify-content: center;
                 border: 1px solid transparent;
                 border-bottom: none;
-                background: #333333;
+                //background: #333333;
                 padding: 5px;
                 height: 28px;
                 cursor: pointer;
 
                 &.active {
-                    border-color: #ffffff;
+                    border-color: #000;
                     border-bottom: 2px solid transparent;
                     margin-bottom: -2px;
+                    background: #E7E5EF;
+                    height: 100%;
+                    border-top-right-radius: 5px;
+                    border-top-left-radius: 5px;
                 }
             }
         }
@@ -134,7 +136,7 @@ $line-padding-left: 2px;
 
             .infoMessage {
                 opacity: 0.5;
-                color: white;
+                color: black;
                 margin: 15px 5px 0px 5px;
             }
 
@@ -271,7 +273,7 @@ $line-padding-left: 2px;
             }
 
             .pane {
-                color: white;
+                //color: white;
 
                 overflow-x: hidden;
                 overflow-y: auto;
@@ -609,7 +611,7 @@ $line-padding-left: 2px;
                 }
 
                 .buttonLine {
-                    height: 30px;
+                    //height: 30px;
                     display: grid;
                     align-items: center;
                     justify-items: stretch;
@@ -619,15 +621,13 @@ $line-padding-left: 2px;
                     }
 
                     .file-upload {
-                        background: #222222;
-                        border: 1px solid rgb(51, 122, 183);
-                        margin: 5px 10px 5px 10px;
-                        color: white;
-                        padding: 4px 5px;
-                        font-size: 13px;
-                        opacity: 0.9;
                         cursor: pointer;
-                        text-align: center;
+                        &:hover button {
+                            opacity: 0.8;
+                        }
+                        button {
+                            width: -webkit-fill-available;
+                        }
                     }
 
                     .file-upload:hover {
@@ -640,13 +640,13 @@ $line-padding-left: 2px;
                     }
 
                     button {
-                        background: #222222;
-                        border: 1px solid rgb(51, 122, 183);
+                        //background: #222222;
+                        //border: 1px solid rgb(51, 122, 183);
                         margin: 5px 10px 5px 10px;
-                        color: white;
-                        padding: 4px 5px;
-                        opacity: 0.9;
-                        cursor: pointer;
+                        //color: white;
+                        //padding: 4px 5px;
+                        //opacity: 0.9;
+                        //cursor: pointer;
                     }
 
                     button:hover {
@@ -961,8 +961,7 @@ $line-padding-left: 2px;
                 }
 
                 .gltf-extension-property {
-                    margin-left: 30px;
-                    border-left: 1px solid rgb(51, 122, 183);
+                    border-left: 1px solid rgb(255, 0, 138);
                 }
 
                 .floatLine {
@@ -1201,13 +1200,13 @@ $line-padding-left: 2px;
 
                     &:hover {
                         .paneList {
-                            border-left: 3px solid rgba(51, 122, 183, 0.8);
+                            border-left: 3px solid rgb(255, 0, 138);
                         }
 
                         .paneContainer-content {
                             .header {
                                 .title {
-                                    border-left: 3px solid rgb(51, 122, 183);
+                                    border-left: 3px solid rgb(255, 0, 138);
                                 }
                             }
                         }
@@ -1235,10 +1234,13 @@ $line-padding-left: 2px;
                         .header {
                             display: grid;
                             grid-template-columns: 1fr auto;
-                            background: #555555;
+                            background: #fff;
                             height: 30px;
-                            padding-right: 5px;
+                            padding: 8px;
                             cursor: pointer;
+                            box-shadow: 0px 1px 1px rgb(0 0 0 / 25%);
+                            border-top-left-radius: 10px;
+                            border-top-right-radius: 10px;
 
                             .title {
                                 border-left: 3px solid transparent;
