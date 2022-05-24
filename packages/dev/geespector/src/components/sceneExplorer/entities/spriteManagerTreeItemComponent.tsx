@@ -1,7 +1,4 @@
 import type { IExplorerExtensibilityGroup } from "core/Debug/debugLayer";
-
-import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
-import { TreeItemLabelComponent } from "../treeItemLabelComponent";
 import { ExtensionsComponent } from "../extensionsComponent";
 import * as React from "react";
 import type { SpriteManager } from "core/Sprites/spriteManager";
@@ -20,7 +17,7 @@ export class SpriteManagerTreeItemComponent extends React.Component<ISpriteManag
     render() {
         return (
             <div className="spriteManagerTools">
-                <TreeItemLabelComponent label={this.props.spriteManager.name || "No name"} onClick={() => this.props.onClick()} icon={faAddressBook} color="blanchedalmond" />
+                {/*<TreeItemLabelComponent label={this.props.spriteManager.name || "No name"} onClick={() => this.props.onClick()} icon={faAddressBook} color="blanchedalmond" />*/}
                 {<ExtensionsComponent target={this.props.spriteManager} extensibilityGroups={this.props.extensibilityGroups} />}
             </div>
         );

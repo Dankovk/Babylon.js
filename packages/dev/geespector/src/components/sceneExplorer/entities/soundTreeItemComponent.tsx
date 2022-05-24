@@ -1,6 +1,4 @@
 import type { IExplorerExtensibilityGroup } from "core/Debug/debugLayer";
-import { faMusic } from "@fortawesome/free-solid-svg-icons";
-import { TreeItemLabelComponent } from "../treeItemLabelComponent";
 import { ExtensionsComponent } from "../extensionsComponent";
 import * as React from "react";
 import type { Sound } from "core/Audio/sound";
@@ -21,7 +19,7 @@ export class SoundTreeItemComponent extends React.Component<ISoundTreeItemCompon
 
         return (
             <div className="soundTools">
-                <TreeItemLabelComponent label={sound.name} onClick={() => this.props.onClick()} icon={faMusic} color="teal" />
+                {/*<TreeItemLabelComponent label={sound.name} onClick={() => this.props.onClick()} icon={faMusic} color="teal" />*/}
                 {<ExtensionsComponent target={sound} extensibilityGroups={this.props.extensibilityGroups} />}
             </div>
         );

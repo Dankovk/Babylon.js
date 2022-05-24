@@ -1,13 +1,17 @@
 import type { Nullable } from "core/types";
 import type { IExplorerExtensibilityGroup } from "core/Debug/debugLayer";
 
+// @ts-ignore
 import { TreeItemSpecializedComponent } from "./treeItemSpecializedComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import {faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import { Tools } from "../../tools";
 import * as ReactDOM from "react-dom";
 import * as React from "react";
 import type { GlobalState } from "../globalState";
+// @ts-ignore
+import { AssetsChevronPanel } from '@geenee/ui/dist'
+import {getTreeIcon} from "./getTreeIcon";
 
 export interface ITreeItemSelectableComponentProps {
     entity: any;
@@ -89,7 +93,7 @@ export class TreeItemSelectableComponent extends React.Component<ITreeItemSelect
 
     renderChildren() {
         const entity = this.props.entity;
-        if ((!entity.getChildren && !entity.children) || !this.state.isExpanded) {
+        if ((!entity.getChildren && !entity.children)) {
             return null;
         }
 
@@ -111,11 +115,13 @@ export class TreeItemSelectableComponent extends React.Component<ITreeItemSelect
     }
 
     render() {
+        // @ts-ignore
         const marginStyle = {
             paddingLeft: 10 * (this.props.offset + 0.5) + "px",
         };
         const entity = this.props.entity;
 
+        // @ts-ignore
         const chevron = this.state.isExpanded ? <FontAwesomeIcon icon={faMinus} color={'black'} /> : <FontAwesomeIcon icon={faPlus} color={'black'} />;
         const children = entity.getClassName() === "MultiMaterial" ? [] : Tools.SortAndFilter(entity, entity.getChildren ? entity.getChildren() : entity.children);
         const hasChildren = children.length > 0;
@@ -148,23 +154,34 @@ export class TreeItemSelectableComponent extends React.Component<ITreeItemSelect
             }
         }
 
+        const iconConfig = getTreeIcon(entity);
+
         return (
-            <div>
-                <div className={this.state.isSelected ? "itemContainer selected" : "itemContainer"} style={marginStyle}>
-                    {hasChildren && (
+            <div style={{width: '100%'}}>
+                <div className={this.state.isSelected ? "itemContainer selected" : "itemContainer"}>
+                    <AssetsChevronPanel
+                        noChildren={!hasChildren}
+                        title={entity.name}
+                        initialExpanded={false}
+                        icon={<FontAwesomeIcon icon={iconConfig.icon} color={iconConfig.color} />}
+                        actions={
+                            <TreeItemSpecializedComponent
+                                globalState={this.props.globalState}
+                                extensibilityGroups={this.props.extensibilityGroups}
+                                label={entity.name}
+                                entity={entity}
+                                onClick={() => this.onSelect()}
+                            />
+                        }
+                    >
+                   {/* {hasChildren && (
                         <div className="arrow icon" onClick={() => this.switchExpandedState()}>
                             {chevron}
                         </div>
-                    )}
-                    <TreeItemSpecializedComponent
-                        globalState={this.props.globalState}
-                        extensibilityGroups={this.props.extensibilityGroups}
-                        label={entity.name}
-                        entity={entity}
-                        onClick={() => this.onSelect()}
-                    />
+                    )}*/}
+                        {this.renderChildren()}
+                    </AssetsChevronPanel>
                 </div>
-                {this.renderChildren()}
             </div>
         );
     }

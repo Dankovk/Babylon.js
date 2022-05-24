@@ -5,8 +5,7 @@ import type { IExplorerExtensibilityGroup } from "core/Debug/debugLayer";
 import type { Control } from "gui/2D/controls/control";
 import type { AdvancedDynamicTexture } from "gui/2D/advancedDynamicTexture";
 
-import { faImage, faCrosshairs, faPen } from "@fortawesome/free-solid-svg-icons";
-import { TreeItemLabelComponent } from "../../treeItemLabelComponent";
+import { faCrosshairs, faPen } from "@fortawesome/free-solid-svg-icons";
 import { ExtensionsComponent } from "../../extensionsComponent";
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -65,7 +64,7 @@ export class AdvancedDynamicTextureTreeItemComponent extends React.Component<IAd
     render() {
         return (
             <div className="adtextureTools">
-                <TreeItemLabelComponent label={this.props.texture.name} onClick={() => this.props.onClick()} icon={faImage} color="mediumpurple" />
+                {/*<TreeItemLabelComponent label={this.props.texture.name} onClick={() => this.props.onClick()} icon={faImage} color="mediumpurple" />*/}
                 <div className={"icon edit"} onClick={() => EditAdvancedDynamicTexture(this.props.texture)} title="Edit">
                     <FontAwesomeIcon icon={faPen} />
                 </div>

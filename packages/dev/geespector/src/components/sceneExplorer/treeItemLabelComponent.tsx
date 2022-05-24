@@ -24,12 +24,12 @@ export class TreeItemLabelComponent extends React.Component<ITreeItemLabelCompon
 
     render() {
         return (
-            <div className="title" title={this.props.label} onClick={() => this.onClick()}>
-                <div className="titleIcon">
+            // <div className="title" title={this.props.label} onClick={() => this.onClick()}>
+            //     <div className="titleIcon">
                     <FontAwesomeIcon icon={this.props.icon} color={this.props.color} />
-                </div>
-                <div className="titleText">{this.props.label || "no name"}</div>
-            </div>
+                // </div>
+                // <div className="titleText">{this.props.label || "no name"}</div>
+            // </div>
         );
     }
 }

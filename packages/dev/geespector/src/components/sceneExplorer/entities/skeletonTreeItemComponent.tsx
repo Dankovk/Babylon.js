@@ -1,6 +1,4 @@
 import type { IExplorerExtensibilityGroup } from "core/Debug/debugLayer";
-import { faSkull } from "@fortawesome/free-solid-svg-icons";
-import { TreeItemLabelComponent } from "../treeItemLabelComponent";
 import { ExtensionsComponent } from "../extensionsComponent";
 import * as React from "react";
 import type { Skeleton } from "core/Bones/skeleton";
@@ -20,7 +18,7 @@ export class SkeletonTreeItemComponent extends React.Component<ISkeletonTreeItem
         const skeleton = this.props.skeleton;
         return (
             <div className="skeletonTools">
-                <TreeItemLabelComponent label={skeleton.name || "no name"} onClick={() => this.props.onClick()} icon={faSkull} color="gray" />
+                {/*<TreeItemLabelComponent label={skeleton.name || "no name"} onClick={() => this.props.onClick()} icon={faSkull} color="gray" />*/}
                 {<ExtensionsComponent target={skeleton} extensibilityGroups={this.props.extensibilityGroups} />}
             </div>
         );

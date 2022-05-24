@@ -1,22 +1,32 @@
-import type { Nullable } from "core/types";
-import type { Observer, Observable } from "core/Misc/observable";
-import type { PointerInfo } from "core/Events/pointerEvents";
-import { PointerEventTypes } from "core/Events/pointerEvents";
-import type { IExplorerExtensibilityGroup } from "core/Debug/debugLayer";
-import { GizmoManager } from "core/Gizmos/gizmoManager";
-import type { Scene } from "core/scene";
+import type {Nullable} from "core/types";
+import type {Observer, Observable} from "core/Misc/observable";
+import type {PointerInfo} from "core/Events/pointerEvents";
+import {PointerEventTypes} from "core/Events/pointerEvents";
+import type {IExplorerExtensibilityGroup} from "core/Debug/debugLayer";
+import {GizmoManager} from "core/Gizmos/gizmoManager";
+import type {Scene} from "core/scene";
+// @ts-ignore
+import {Description, AssetsChevronPanel} from "@geenee/ui/dist"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSyncAlt, faImage, faCrosshairs, faArrowsAlt, faCompress, faRedoAlt, faVectorSquare } from "@fortawesome/free-solid-svg-icons";
-import { ExtensionsComponent } from "../extensionsComponent";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {
+    faSyncAlt,
+    faImage,
+    faCrosshairs,
+    faArrowsAlt,
+    faCompress,
+    faRedoAlt,
+    faVectorSquare
+} from "@fortawesome/free-solid-svg-icons";
+import {ExtensionsComponent} from "../extensionsComponent";
 import * as React from "react";
 
-import type { GlobalState } from "../../globalState";
-import { UtilityLayerRenderer } from "core/Rendering/utilityLayerRenderer";
-import { PropertyChangedEvent } from "../../../components/propertyChangedEvent";
-import type { LightGizmo } from "core/Gizmos/lightGizmo";
-import type { CameraGizmo } from "core/Gizmos/cameraGizmo";
-import { TmpVectors, Vector3 } from "core/Maths/math";
+import type {GlobalState} from "../../globalState";
+import {UtilityLayerRenderer} from "core/Rendering/utilityLayerRenderer";
+import {PropertyChangedEvent} from "../../../components/propertyChangedEvent";
+import type {LightGizmo} from "core/Gizmos/lightGizmo";
+import type {CameraGizmo} from "core/Gizmos/cameraGizmo";
+import {TmpVectors, Vector3} from "core/Maths/math";
 
 interface ISceneTreeItemComponentProps {
     scene: Scene;
@@ -25,6 +35,7 @@ interface ISceneTreeItemComponentProps {
     extensibilityGroups?: IExplorerExtensibilityGroup[];
     onSelectionChangedObservable?: Observable<any>;
     globalState: GlobalState;
+    children: any
 }
 
 export class SceneTreeItemComponent extends React.Component<ISceneTreeItemComponentProps, { isSelected: boolean; isInPickingMode: boolean; gizmoMode: number }> {
@@ -57,7 +68,7 @@ export class SceneTreeItemComponent extends React.Component<ISceneTreeItemCompon
             manager.enableAutoPicking = false;
         }
 
-        this.state = { isSelected: false, isInPickingMode: false, gizmoMode: gizmoMode };
+        this.state = {isSelected: false, isInPickingMode: false, gizmoMode: gizmoMode};
     }
 
     shouldComponentUpdate(nextProps: ISceneTreeItemComponentProps, nextState: { isSelected: boolean; isInPickingMode: boolean }) {
@@ -216,7 +227,7 @@ export class SceneTreeItemComponent extends React.Component<ISceneTreeItemCompon
             }, PointerEventTypes.POINTERTAP);
         }
 
-        this.setState({ isInPickingMode: !this.state.isInPickingMode });
+        this.setState({isInPickingMode: !this.state.isInPickingMode});
     }
 
     setGizmoMode(mode: number) {
@@ -406,54 +417,71 @@ export class SceneTreeItemComponent extends React.Component<ISceneTreeItemCompon
             }
         }
 
-        this.setState({ gizmoMode: mode });
+        this.setState({gizmoMode: mode});
     }
 
     render() {
         return (
             <div className={this.state.isSelected ? "itemContainer selected" : "itemContainer"}>
-                <div className="sceneNode">
-                    <div className="sceneTitle" onClick={() => this.onSelect()}>
-                        <FontAwesomeIcon icon={faImage} />
-                        &nbsp;Scene
+                <AssetsChevronPanel
+                    title={'Scene'}
+                    icon={<FontAwesomeIcon icon={faImage} color={'#AEAEAE'}/>}
+                    actions={
+                        <div className="sceneNode">
+                            <div
+                                className={this.state.gizmoMode === 1 ? "translation selected icon" : "translation icon"}
+                                onClick={() => this.setGizmoMode(1)}
+                                title="Enable/Disable position mode"
+                            >
+                                <FontAwesomeIcon icon={faArrowsAlt}/>
+                            </div>
+                            <div
+                                className={this.state.gizmoMode === 2 ? "rotation selected icon" : "rotation icon"}
+                                onClick={() => this.setGizmoMode(2)}
+                                title="Enable/Disable rotation mode"
+                            >
+                                <FontAwesomeIcon icon={faRedoAlt}/>
+                            </div>
+                            <div
+                                className={this.state.gizmoMode === 3 ? "scaling selected icon" : "scaling icon"}
+                                onClick={() => this.setGizmoMode(3)}
+                                title="Enable/Disable scaling mode">
+                                <FontAwesomeIcon icon={faCompress}/>
+                            </div>
+                            <div
+                                className={this.state.gizmoMode === 4 ? "bounding selected icon" : "bounding icon"}
+                                onClick={() => this.setGizmoMode(4)}
+                                title="Enable/Disable bounding box mode"
+                            >
+                                <FontAwesomeIcon icon={faVectorSquare}/>
+                            </div>
+                            <div className="separator"/>
+                            <div
+                                className={this.state.isInPickingMode ? "pickingMode selected icon" : "pickingMode icon"}
+                                onClick={() => this.onPickingMode()}
+                                title="Turn picking mode on/off"
+                            >
+                                <FontAwesomeIcon icon={faCrosshairs}/>
+                            </div>
+                            <div className="refresh icon" onClick={() => this.props.onRefresh()}
+                                 title="Refresh the explorer">
+                                <FontAwesomeIcon icon={faSyncAlt}/>
+                            </div>
+                            {<ExtensionsComponent target={this.props.scene}
+                                                  extensibilityGroups={this.props.extensibilityGroups}/>}
+                        </div>
+                    }>
+                    {this.props.children}
+                </AssetsChevronPanel>
+                {/* <div className="sceneNode">
+                    <div style={{display: 'flex'}}>
+                        <FontAwesomeIcon icon={faImage} style={{marginBottom: '3px'}} color={'#AEAEAE'} />
+                        <Description size="sm" color="pink" weight="bold" onClick={() => this.onSelect()}>
+                            &nbsp;Scene
+                        </Description>
                     </div>
-                    <div
-                        className={this.state.gizmoMode === 1 ? "translation selected icon" : "translation icon"}
-                        onClick={() => this.setGizmoMode(1)}
-                        title="Enable/Disable position mode"
-                    >
-                        <FontAwesomeIcon icon={faArrowsAlt} />
-                    </div>
-                    <div
-                        className={this.state.gizmoMode === 2 ? "rotation selected icon" : "rotation icon"}
-                        onClick={() => this.setGizmoMode(2)}
-                        title="Enable/Disable rotation mode"
-                    >
-                        <FontAwesomeIcon icon={faRedoAlt} />
-                    </div>
-                    <div className={this.state.gizmoMode === 3 ? "scaling selected icon" : "scaling icon"} onClick={() => this.setGizmoMode(3)} title="Enable/Disable scaling mode">
-                        <FontAwesomeIcon icon={faCompress} />
-                    </div>
-                    <div
-                        className={this.state.gizmoMode === 4 ? "bounding selected icon" : "bounding icon"}
-                        onClick={() => this.setGizmoMode(4)}
-                        title="Enable/Disable bounding box mode"
-                    >
-                        <FontAwesomeIcon icon={faVectorSquare} />
-                    </div>
-                    <div className="separator" />
-                    <div
-                        className={this.state.isInPickingMode ? "pickingMode selected icon" : "pickingMode icon"}
-                        onClick={() => this.onPickingMode()}
-                        title="Turn picking mode on/off"
-                    >
-                        <FontAwesomeIcon icon={faCrosshairs} />
-                    </div>
-                    <div className="refresh icon" onClick={() => this.props.onRefresh()} title="Refresh the explorer">
-                        <FontAwesomeIcon icon={faSyncAlt} />
-                    </div>
-                    {<ExtensionsComponent target={this.props.scene} extensibilityGroups={this.props.extensibilityGroups} />}
-                </div>
+
+                </div>*/}
             </div>
         );
     }

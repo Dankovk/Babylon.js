@@ -1,7 +1,6 @@
 import type { IExplorerExtensibilityGroup } from "core/Debug/debugLayer";
 import type { Material } from "core/Materials/material";
-import { faBrush, faPen } from "@fortawesome/free-solid-svg-icons";
-import { TreeItemLabelComponent } from "../treeItemLabelComponent";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { ExtensionsComponent } from "../extensionsComponent";
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,7 +34,7 @@ export class MaterialTreeItemComponent extends React.Component<IMaterialTreeItem
 
         return (
             <div className="materialTools">
-                <TreeItemLabelComponent label={this.props.material.name} onClick={() => this.props.onClick()} icon={faBrush} color="orange" />
+                {/*<TreeItemLabelComponent label={this.props.material.name} onClick={() => this.props.onClick()} icon={faBrush} color="orange" />*/}
                 {<ExtensionsComponent target={this.props.material} extensibilityGroups={this.props.extensibilityGroups} />}
                 {nmeIcon}
             </div>

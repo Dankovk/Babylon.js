@@ -11,7 +11,9 @@ import type { PostProcess } from "core/PostProcesses/postProcess";
 import { MeshTreeItemComponent } from "./entities/meshTreeItemComponent";
 import { CameraTreeItemComponent } from "./entities/cameraTreeItemComponent";
 import { LightTreeItemComponent } from "./entities/lightTreeItemComponent";
+// @ts-ignore
 import { TreeItemLabelComponent } from "./treeItemLabelComponent";
+// @ts-ignore
 import { faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
 import { MaterialTreeItemComponent } from "./entities/materialTreeItemComponent";
 import { TextureTreeItemComponent } from "./entities/textureTreeItemComponent";

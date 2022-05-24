@@ -2,8 +2,10 @@ import type { IExplorerExtensibilityGroup } from "core/Debug/debugLayer";
 import type { AbstractMesh } from "core/Meshes/abstractMesh";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// @ts-ignore
 import { faCube } from "@fortawesome/free-solid-svg-icons";
 import { faEye, faEyeSlash, faSquare } from "@fortawesome/free-regular-svg-icons";
+// @ts-ignore
 import { TreeItemLabelComponent } from "../treeItemLabelComponent";
 import { ExtensionsComponent } from "../extensionsComponent";
 import * as React from "react";
@@ -46,7 +48,6 @@ export class MeshTreeItemComponent extends React.Component<IMeshTreeItemComponen
 
         return (
             <div className="meshTools">
-                <TreeItemLabelComponent label={mesh.name} onClick={() => this.props.onClick()} icon={faCube} color="dodgerblue" />
                 <div
                     className={this.state.isBoundingBoxEnabled ? "bounding-box selected icon" : "bounding-box icon"}
                     onClick={() => this.showBoundingBox()}

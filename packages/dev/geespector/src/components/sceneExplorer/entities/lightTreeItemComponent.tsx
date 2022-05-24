@@ -2,9 +2,8 @@ import type { IExplorerExtensibilityGroup } from "core/Debug/debugLayer";
 import type { Light } from "core/Lights/light";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLightbulb, faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faLightbulb as faLightbubRegular } from "@fortawesome/free-regular-svg-icons";
-import { TreeItemLabelComponent } from "../treeItemLabelComponent";
 import { ExtensionsComponent } from "../extensionsComponent";
 import * as React from "react";
 import type { GlobalState } from "../../globalState";
@@ -58,7 +57,7 @@ export class LightTreeItemComponent extends React.Component<ILightTreeItemCompon
 
         return (
             <div className="lightTools">
-                <TreeItemLabelComponent label={this.props.light.name} onClick={() => this.props.onClick()} icon={faLightbulb} color="yellow" />
+                {/*<TreeItemLabelComponent label={this.props.light.name} onClick={() => this.props.onClick()} icon={faLightbulb} color="yellow" />*/}
                 <div className="visibility icon" onClick={() => this.switchIsEnabled()} title="Turn on/off the light">
                     {isEnabledElement}
                 </div>

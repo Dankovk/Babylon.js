@@ -1,31 +1,31 @@
 import * as React from "react";
 
-import type { Nullable } from "core/types";
-import type { Observer } from "core/Misc/observable";
-import type { IExplorerExtensibilityGroup } from "core/Debug/debugLayer";
-import type { Scene } from "core/scene";
-import { EngineStore } from "core/Engines/engineStore";
+import type {Nullable} from "core/types";
+import type {Observer} from "core/Misc/observable";
+import type {IExplorerExtensibilityGroup} from "core/Debug/debugLayer";
+import type {Scene} from "core/scene";
+import {EngineStore} from "core/Engines/engineStore";
 
-import { TreeItemComponent } from "./treeItemComponent";
+import {TreeItemComponent} from "./treeItemComponent";
 import Resizable from "re-resizable";
-import { HeaderComponent } from "../headerComponent";
-import { SceneTreeItemComponent } from "./entities/sceneTreeItemComponent";
-import { Tools } from "../../tools";
-import type { GlobalState } from "../../components/globalState";
-import { DefaultRenderingPipeline } from "core/PostProcesses/RenderPipeline/Pipelines/defaultRenderingPipeline";
-import { Vector3 } from "core/Maths/math";
-import { PointLight } from "core/Lights/pointLight";
-import { FreeCamera } from "core/Cameras/freeCamera";
-import { DirectionalLight } from "core/Lights/directionalLight";
-import { SSAORenderingPipeline } from "core/PostProcesses/RenderPipeline/Pipelines/ssaoRenderingPipeline";
-import { NodeMaterial } from "core/Materials/Node/nodeMaterial";
-import { ParticleHelper } from "core/Particles/particleHelper";
-import { GPUParticleSystem } from "core/Particles/gpuParticleSystem";
-import { SSAO2RenderingPipeline } from "core/PostProcesses/RenderPipeline/Pipelines/ssao2RenderingPipeline";
-import { StandardMaterial } from "core/Materials/standardMaterial";
-import { PBRMaterial } from "core/Materials/PBR/pbrMaterial";
-import { SpriteManager } from "core/Sprites/spriteManager";
-import type { TargetCamera } from "core/Cameras/targetCamera";
+import {HeaderComponent} from "../headerComponent";
+import {SceneTreeItemComponent} from "./entities/sceneTreeItemComponent";
+import {Tools} from "../../tools";
+import type {GlobalState} from "../../components/globalState";
+import {DefaultRenderingPipeline} from "core/PostProcesses/RenderPipeline/Pipelines/defaultRenderingPipeline";
+import {Vector3} from "core/Maths/math";
+import {PointLight} from "core/Lights/pointLight";
+import {FreeCamera} from "core/Cameras/freeCamera";
+import {DirectionalLight} from "core/Lights/directionalLight";
+import {SSAORenderingPipeline} from "core/PostProcesses/RenderPipeline/Pipelines/ssaoRenderingPipeline";
+import {NodeMaterial} from "core/Materials/Node/nodeMaterial";
+import {ParticleHelper} from "core/Particles/particleHelper";
+import {GPUParticleSystem} from "core/Particles/gpuParticleSystem";
+import {SSAO2RenderingPipeline} from "core/PostProcesses/RenderPipeline/Pipelines/ssao2RenderingPipeline";
+import {StandardMaterial} from "core/Materials/standardMaterial";
+import {PBRMaterial} from "core/Materials/PBR/pbrMaterial";
+import {SpriteManager} from "core/Sprites/spriteManager";
+import type {TargetCamera} from "core/Cameras/targetCamera";
 
 // side effects
 import "core/Sprites/spriteSceneComponent";
@@ -49,7 +49,8 @@ export class SceneExplorerFilterComponent extends React.Component<ISceneExplorer
     render() {
         return (
             <div className="filter">
-                <Input size={'xs'} type={"text"} placeholder="Filter" onChange={(evt: ChangeEvent<HTMLInputElement>) => this.props.onFilter(evt.target.value)} />
+                <Input size={'xs'} type={"text"} placeholder="Filter"
+                       onChange={(evt: ChangeEvent<HTMLInputElement>) => this.props.onFilter(evt.target.value)}/>
             </div>
         );
     }
@@ -84,7 +85,7 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
     constructor(props: ISceneExplorerComponentProps) {
         super(props);
 
-        this.state = { filter: null, selectedEntity: null, scene: this.props.scene };
+        this.state = {filter: null, selectedEntity: null, scene: this.props.scene};
 
         this._sceneMutationFunc = this.processMutation.bind(this);
 
@@ -115,7 +116,7 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
     componentDidMount() {
         this._onSelectionChangeObserver = this.props.globalState.onSelectionChangedObservable.add((entity) => {
             if (this.state.selectedEntity !== entity) {
-                this.setState({ selectedEntity: entity });
+                this.setState({selectedEntity: entity});
             }
         });
 
@@ -161,7 +162,7 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
     }
 
     filterContent(filter: string) {
-        this.setState({ filter: filter });
+        this.setState({filter: filter});
     }
 
     findSiblings(parent: any, items: any[], target: any, goNext: boolean, data: { previousOne?: any; found?: boolean }): boolean {
@@ -258,7 +259,7 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
         const scene = this.state.scene;
 
         if (!scene) {
-            this._onNewSceneAddedObserver = EngineStore.LastCreatedEngine!.onNewSceneAddedObservable.addOnce((scene) => this.setState({ scene: scene }));
+            this._onNewSceneAddedObserver = EngineStore.LastCreatedEngine!.onNewSceneAddedObservable.addOnce((scene) => this.setState({scene: scene}));
             return null;
         }
 
@@ -440,7 +441,7 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
 
         return (
             <div id="tree" onContextMenu={(e) => e.preventDefault()}>
-                <SceneExplorerFilterComponent onFilter={(filter) => this.filterContent(filter)} />
+                <SceneExplorerFilterComponent onFilter={(filter) => this.filterContent(filter)}/>
                 <SceneTreeItemComponent
                     globalState={this.props.globalState}
                     extensibilityGroups={this.props.extensibilityGroups}
@@ -448,133 +449,134 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
                     scene={scene}
                     onRefresh={() => this.forceUpdate()}
                     onSelectionChangedObservable={this.props.globalState.onSelectionChangedObservable}
-                />
-                <TreeItemComponent
-                    globalState={this.props.globalState}
-                    contextMenuItems={nodeContextMenus}
-                    extensibilityGroups={this.props.extensibilityGroups}
-                    selectedEntity={this.state.selectedEntity}
-                    items={rootNodes}
-                    label="Nodes"
-                    offset={1}
-                    filter={this.state.filter}
-                />
-                {scene.skeletons.length > 0 && (
+                >
+                    <TreeItemComponent
+                        globalState={this.props.globalState}
+                        contextMenuItems={nodeContextMenus}
+                        extensibilityGroups={this.props.extensibilityGroups}
+                        selectedEntity={this.state.selectedEntity}
+                        items={rootNodes}
+                        label="Nodes"
+                        offset={1}
+                        filter={this.state.filter}
+                    />
+                    {scene.skeletons.length > 0 && (
+                        <TreeItemComponent
+                            globalState={this.props.globalState}
+                            extensibilityGroups={this.props.extensibilityGroups}
+                            selectedEntity={this.state.selectedEntity}
+                            items={scene.skeletons}
+                            label="Skeletons"
+                            offset={1}
+                            filter={this.state.filter}
+                        />
+                    )}
                     <TreeItemComponent
                         globalState={this.props.globalState}
                         extensibilityGroups={this.props.extensibilityGroups}
                         selectedEntity={this.state.selectedEntity}
-                        items={scene.skeletons}
-                        label="Skeletons"
+                        items={materials}
+                        contextMenuItems={materialsContextMenus}
+                        label="Materials"
                         offset={1}
                         filter={this.state.filter}
                     />
-                )}
-                <TreeItemComponent
-                    globalState={this.props.globalState}
-                    extensibilityGroups={this.props.extensibilityGroups}
-                    selectedEntity={this.state.selectedEntity}
-                    items={materials}
-                    contextMenuItems={materialsContextMenus}
-                    label="Materials"
-                    offset={1}
-                    filter={this.state.filter}
-                />
-                <TreeItemComponent
-                    globalState={this.props.globalState}
-                    extensibilityGroups={this.props.extensibilityGroups}
-                    selectedEntity={this.state.selectedEntity}
-                    items={textures}
-                    label="Textures"
-                    offset={1}
-                    filter={this.state.filter}
-                />
-                {postProcessses.length > 0 && (
                     <TreeItemComponent
                         globalState={this.props.globalState}
                         extensibilityGroups={this.props.extensibilityGroups}
                         selectedEntity={this.state.selectedEntity}
-                        items={postProcessses}
-                        label="Post-processes"
+                        items={textures}
+                        label="Textures"
                         offset={1}
                         filter={this.state.filter}
                     />
-                )}
-                <TreeItemComponent
-                    globalState={this.props.globalState}
-                    extensibilityGroups={this.props.extensibilityGroups}
-                    contextMenuItems={pipelineContextMenus}
-                    selectedEntity={this.state.selectedEntity}
-                    items={pipelines}
-                    label="Rendering pipelines"
-                    offset={1}
-                    filter={this.state.filter}
-                />
-                {scene.effectLayers && scene.effectLayers.length > 0 && (
+                    {postProcessses.length > 0 && (
+                        <TreeItemComponent
+                            globalState={this.props.globalState}
+                            extensibilityGroups={this.props.extensibilityGroups}
+                            selectedEntity={this.state.selectedEntity}
+                            items={postProcessses}
+                            label="Post-processes"
+                            offset={1}
+                            filter={this.state.filter}
+                        />
+                    )}
                     <TreeItemComponent
                         globalState={this.props.globalState}
                         extensibilityGroups={this.props.extensibilityGroups}
+                        contextMenuItems={pipelineContextMenus}
                         selectedEntity={this.state.selectedEntity}
-                        items={scene.effectLayers}
-                        label="Effect layers"
+                        items={pipelines}
+                        label="Rendering pipelines"
                         offset={1}
                         filter={this.state.filter}
                     />
-                )}
-                <TreeItemComponent
-                    globalState={this.props.globalState}
-                    contextMenuItems={particleSystemsContextMenus}
-                    extensibilityGroups={this.props.extensibilityGroups}
-                    selectedEntity={this.state.selectedEntity}
-                    items={scene.particleSystems}
-                    label="Particle systems"
-                    offset={1}
-                    filter={this.state.filter}
-                />
-                <TreeItemComponent
-                    globalState={this.props.globalState}
-                    contextMenuItems={spriteManagersContextMenus}
-                    forceSubitems={true}
-                    extensibilityGroups={this.props.extensibilityGroups}
-                    selectedEntity={this.state.selectedEntity}
-                    items={scene.spriteManagers}
-                    label="Sprite managers"
-                    offset={1}
-                    filter={this.state.filter}
-                />
-                {guiElements && guiElements.length > 0 && (
+                    {scene.effectLayers && scene.effectLayers.length > 0 && (
+                        <TreeItemComponent
+                            globalState={this.props.globalState}
+                            extensibilityGroups={this.props.extensibilityGroups}
+                            selectedEntity={this.state.selectedEntity}
+                            items={scene.effectLayers}
+                            label="Effect layers"
+                            offset={1}
+                            filter={this.state.filter}
+                        />
+                    )}
                     <TreeItemComponent
                         globalState={this.props.globalState}
+                        contextMenuItems={particleSystemsContextMenus}
                         extensibilityGroups={this.props.extensibilityGroups}
                         selectedEntity={this.state.selectedEntity}
-                        items={guiElements}
-                        label="GUI"
+                        items={scene.particleSystems}
+                        label="Particle systems"
                         offset={1}
                         filter={this.state.filter}
                     />
-                )}
-                {scene.animationGroups.length > 0 && (
                     <TreeItemComponent
                         globalState={this.props.globalState}
+                        contextMenuItems={spriteManagersContextMenus}
+                        forceSubitems={true}
                         extensibilityGroups={this.props.extensibilityGroups}
                         selectedEntity={this.state.selectedEntity}
-                        items={scene.animationGroups}
-                        label="Animation groups"
+                        items={scene.spriteManagers}
+                        label="Sprite managers"
                         offset={1}
                         filter={this.state.filter}
                     />
-                )}
-                {scene.mainSoundTrack && scene.mainSoundTrack.soundCollection.length > 0 && (
-                    <TreeItemComponent
-                        globalState={this.props.globalState}
-                        extensibilityGroups={this.props.extensibilityGroups}
-                        selectedEntity={this.state.selectedEntity}
-                        items={scene.mainSoundTrack.soundCollection}
-                        label="Sounds"
-                        offset={1}
-                        filter={this.state.filter}
-                    />
-                )}
+                    {guiElements && guiElements.length > 0 && (
+                        <TreeItemComponent
+                            globalState={this.props.globalState}
+                            extensibilityGroups={this.props.extensibilityGroups}
+                            selectedEntity={this.state.selectedEntity}
+                            items={guiElements}
+                            label="GUI"
+                            offset={1}
+                            filter={this.state.filter}
+                        />
+                    )}
+                    {scene.animationGroups.length > 0 && (
+                        <TreeItemComponent
+                            globalState={this.props.globalState}
+                            extensibilityGroups={this.props.extensibilityGroups}
+                            selectedEntity={this.state.selectedEntity}
+                            items={scene.animationGroups}
+                            label="Animation groups"
+                            offset={1}
+                            filter={this.state.filter}
+                        />
+                    )}
+                    {scene.mainSoundTrack && scene.mainSoundTrack.soundCollection.length > 0 && (
+                        <TreeItemComponent
+                            globalState={this.props.globalState}
+                            extensibilityGroups={this.props.extensibilityGroups}
+                            selectedEntity={this.state.selectedEntity}
+                            items={scene.mainSoundTrack.soundCollection}
+                            label="Sounds"
+                            offset={1}
+                            filter={this.state.filter}
+                        />
+                    )}
+                </SceneTreeItemComponent>
             </div>
         );
     }
@@ -632,18 +634,27 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
                 header="SCENE EXPLORER"
                 contentPadding={"0"}
                 toggleable
-                collapsed={ this.state.collapsed }
-                onToggle={ () => this.setState({ collapsed: !this.state.collapsed })}
+                collapsed={this.state.collapsed}
+                onToggle={() => this.setState({collapsed: !this.state.collapsed})}
             >
                 <Resizable
                     tabIndex={-1}
                     id="sceneExplorer"
                     ref={this._sceneExplorerRef}
-                    size={{ height: "100%" }}
+                    size={{height: "100%"}}
                     minWidth={300}
                     maxWidth={600}
                     minHeight="100%"
-                    enable={{ top: false, right: true, bottom: false, left: false, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}
+                    enable={{
+                        top: false,
+                        right: true,
+                        bottom: false,
+                        left: false,
+                        topRight: false,
+                        bottomRight: false,
+                        bottomLeft: false,
+                        topLeft: false
+                    }}
                     onKeyDown={(keyEvent) => this.processKeys(keyEvent)}
                 >
                     {/*{!this.props.noHeader && (

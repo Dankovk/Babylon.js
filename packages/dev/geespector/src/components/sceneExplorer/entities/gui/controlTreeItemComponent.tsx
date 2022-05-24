@@ -1,7 +1,6 @@
-import { faObjectGroup, faHighlighter, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faHighlighter, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import type { IExplorerExtensibilityGroup } from "core/Debug/debugLayer";
 import type { Control } from "gui/2D/controls/control";
-import { TreeItemLabelComponent } from "../../treeItemLabelComponent";
 import { ExtensionsComponent } from "../../extensionsComponent";
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,13 +34,14 @@ export class ControlTreeItemComponent extends React.Component<IControlTreeItemCo
 
     render() {
         const control = this.props.control;
+        // @ts-ignore
         const name = (control.name || "No name") + ` [${control.getClassName()}]`;
         const isActiveElement = this.state.isActive ? <FontAwesomeIcon icon={faHighlighter} /> : <FontAwesomeIcon icon={faHighlighter} className="isNotActive" />;
         const visibilityElement = this.state.isVisible ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} className="isNotActive" />;
 
         return (
             <div className="controlTools">
-                <TreeItemLabelComponent label={name} onClick={() => this.props.onClick()} icon={faObjectGroup} color="greenyellow" />
+                {/*<TreeItemLabelComponent label={name} onClick={() => this.props.onClick()} icon={faObjectGroup} color="greenyellow" />*/}
                 <div className="highlight icon" onClick={() => this.highlight()} title="Highlight this control">
                     {isActiveElement}
                 </div>
