@@ -8,7 +8,7 @@ import { Tools } from "core/Misc/tools";
 import { conflictingValuesPlaceholder } from "./targetsProxy";
 import { InputArrowsComponent } from "./inputArrowsComponent";
 // @ts-ignore
-import {Input, Description} from '@geenee/ui/dist'
+import {Input, Description, RangeSlider} from '@geenee/ui/dist'
 
 
 interface IFloatLineComponentProps {

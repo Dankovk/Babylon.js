@@ -8,6 +8,8 @@ import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import type { PropertyChangedEvent } from "../propertyChangedEvent";
 import { SliderLineComponent } from "../lines/sliderLineComponent";
 import { Tools } from "core/Misc/tools";
+// @ts-ignore
+import { Description } from "@geenee/ui/dist";
 
 interface IVector3LineComponentProps {
     label: string;
@@ -109,16 +111,18 @@ export class Vector3LineComponent extends React.Component<IVector3LineComponentP
             <div className="vector3Line">
                 <div className="firstLine">
                     {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} className="icon" />}
-                    <div className="label" title={this.props.label}>
+                    <Description size={'sm'}>
                         {this.props.label}
-                    </div>
-                    <div className="vector">
+                    </Description>
+                    <Description size={'sm'}>
+                    {/*<div className="vector">*/}
                         {!this.props.useEuler && `X: ${this.state.value.x.toFixed(2)}, Y: ${this.state.value.y.toFixed(2)}, Z: ${this.state.value.z.toFixed(2)}`}
                         {this.props.useEuler &&
                             `X: ${Tools.ToDegrees(this.state.value.x).toFixed(2)}, Y: ${Tools.ToDegrees(this.state.value.y).toFixed(2)}, Z: ${Tools.ToDegrees(
                                 this.state.value.z
                             ).toFixed(2)}`}
-                    </div>
+                    {/*</div>*/}
+                    </Description>
                     <div className="expand hoverIcon" onClick={() => this.switchExpandState()} title="Expand">
                         {chevron}
                     </div>

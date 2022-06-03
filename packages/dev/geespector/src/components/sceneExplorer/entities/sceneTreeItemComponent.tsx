@@ -426,6 +426,7 @@ export class SceneTreeItemComponent extends React.Component<ISceneTreeItemCompon
                 <AssetsChevronPanel
                     title={'Scene'}
                     icon={<FontAwesomeIcon icon={faImage} color={'#AEAEAE'}/>}
+                    onTitleClick={() => this.onSelect()}
                     actions={
                         <div className="sceneNode">
                             <div

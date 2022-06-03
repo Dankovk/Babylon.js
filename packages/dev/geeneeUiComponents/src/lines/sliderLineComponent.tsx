@@ -4,6 +4,8 @@ import type { PropertyChangedEvent } from "../propertyChangedEvent";
 import { Tools } from "core/Misc/tools";
 import { FloatLineComponent } from "./floatLineComponent";
 import type { LockObject } from "../tabs/propertyGrids/lockObject";
+// @ts-ignore
+import {Description, RangeSlider, Wrapper} from '@geenee/ui/dist'
 
 interface ISliderLineComponentProps {
     label: string;
@@ -121,32 +123,44 @@ export class SliderLineComponent extends React.Component<ISliderLineComponentPro
             <div className="sliderLine">
                 {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} className="icon" />}
                 {(!this.props.icon || this.props.label != "") && (
-                    <div className={this.props.margin ? "label withMargins" : "label"} title={this.props.label}>
+                    <Description size={'sm'}>
+                    {/*<div className={this.props.margin ? "label withMargins" : "label"} title={this.props.label}>*/}
                         {this.props.label}
-                    </div>
+                    {/*</div>*/}
+                    </Description>
                 )}
-                <FloatLineComponent
-                    lockObject={this.props.lockObject}
-                    isInteger={this.props.decimalCount === 0}
-                    smallUI={true}
-                    label=""
-                    target={this.state}
-                    digits={this.props.decimalCount === undefined ? 4 : this.props.decimalCount}
-                    propertyName="value"
-                    min={this.props.minimum}
-                    max={this.props.maximum}
-                    onEnter={() => {
-                        const changed = this.prepareDataToRead(this.state.value);
-                        this.onChange(changed);
-                    }}
-                    onChange={() => {
-                        const changed = this.prepareDataToRead(this.state.value);
-                        this.onChange(changed);
-                    }}
-                    onPropertyChangedObservable={this.props.onPropertyChangedObservable}
-                    unit={this.props.unit}
+                <Wrapper margin={'md'}>
+                    <FloatLineComponent
+                        lockObject={this.props.lockObject}
+                        isInteger={this.props.decimalCount === 0}
+                        smallUI={true}
+                        label=""
+                        target={this.state}
+                        digits={this.props.decimalCount === undefined ? 4 : this.props.decimalCount}
+                        propertyName="value"
+                        min={this.props.minimum}
+                        max={this.props.maximum}
+                        onEnter={() => {
+                            const changed = this.prepareDataToRead(this.state.value);
+                            this.onChange(changed);
+                        }}
+                        onChange={() => {
+                            const changed = this.prepareDataToRead(this.state.value);
+                            this.onChange(changed);
+                        }}
+                        onPropertyChangedObservable={this.props.onPropertyChangedObservable}
+                        unit={this.props.unit}
+                    />
+                </Wrapper>
+                <RangeSlider
+                    values={[this.prepareDataToRead(this.state.value)]}
+                    step={this.props.step}
+                    min={this.prepareDataToRead(this.props.minimum)}
+                    max={this.prepareDataToRead(this.props.maximum)}
+                    // @ts-ignore
+                    onChange={ (([val]) => this.onChange(val)) }
                 />
-                <div className="slider">
+                {/*<div className="slider">
                     <input
                         className="range"
                         type="range"
@@ -157,7 +171,7 @@ export class SliderLineComponent extends React.Component<ISliderLineComponentPro
                         onInput={(evt) => this.onInput((evt.target as HTMLInputElement).value)}
                         onChange={(evt) => this.onChange(evt.target.value)}
                     />
-                </div>
+                </div>*/}
             </div>
         );
     }

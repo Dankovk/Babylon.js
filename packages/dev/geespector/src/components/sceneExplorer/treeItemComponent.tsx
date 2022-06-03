@@ -164,6 +164,7 @@ export class TreeItemComponent extends React.Component<ITreeItemComponentProps, 
         }
 
         if (!items.length) {
+            return <AssetsChevronPanel noChildren title={this.props.label}/>
             return (
                 <div className="groupContainer" style={marginStyle}>
                     <ContextMenuTrigger id={"contextmenu#" + TreeItemComponent._ContextMenuUniqueIdGenerator}>
