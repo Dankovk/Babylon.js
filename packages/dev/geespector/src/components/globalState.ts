@@ -205,4 +205,6 @@ export class GlobalState {
 
     public onSceneExplorerClosedObservable = new Observable<void>();
     public onActionTabsClosedObservable = new Observable<void>();
+
+    public isDevMode = location.search.includes("dev=true")
 }

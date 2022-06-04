@@ -85,6 +85,21 @@ export class ActionTabsComponent extends React.Component<IActionTabsComponentPro
 
     renderContent() {
         if (this.props.globalState && this.props.scene) {
+            if(!this.props.globalState.isDevMode) {
+                return <div className="tabs" style={{gridTemplateRows: 'max-content'}}>
+                    <div className="panes">
+                        <PropertyGridTabComponent
+                            title="Properties"
+                            icon={faFileAlt}
+                            scene={this.props.scene}
+                            selectedEntity={this.state.selectedEntity}
+                            globalState={this.props.globalState}
+                            onSelectionChangedObservable={this.props.globalState.onSelectionChangedObservable}
+                            onPropertyChangedObservable={this.props.globalState.onPropertyChangedObservable}
+                        />
+                    </div>
+                </div>
+            }
             return (
                 <TabsComponent selectedIndex={this.state.selectedIndex} onSelectedIndexChange={(value) => this.changeSelectedTab(value)}>
                     <PropertyGridTabComponent

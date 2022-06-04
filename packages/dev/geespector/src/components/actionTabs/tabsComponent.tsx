@@ -32,7 +32,7 @@ export class TabsComponent extends React.Component<ITabsComponentProps> {
         return (
             <div className="tabs" onContextMenu={(e) => e.preventDefault()}>
                 <div className="labels">
-                    {this.props.children.map((child: PaneComponent, index) => {
+                    {this.props.children.filter(el => el).map((child: PaneComponent, index) => {
                         return this.renderLabel(child, index);
                     })}
                 </div>
