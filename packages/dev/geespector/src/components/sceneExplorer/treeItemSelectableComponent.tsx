@@ -163,7 +163,7 @@ export class TreeItemSelectableComponent extends React.Component<ITreeItemSelect
                         noChildren={!hasChildren}
                         title={entity.name}
                         initialExpanded={false}
-                        icon={<FontAwesomeIcon icon={iconConfig.icon} color={iconConfig.color} />}
+                        icon={<FontAwesomeIcon icon={iconConfig.icon} color={iconConfig.color} style={{marginBottom: 4}} />}
                         onTitleClick={() => this.onSelect()}
                         actions={
                             <TreeItemSpecializedComponent

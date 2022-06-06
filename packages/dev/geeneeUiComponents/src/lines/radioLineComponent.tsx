@@ -1,6 +1,8 @@
 import * as React from "react";
 import type { Nullable } from "core/types";
 import type { Observer, Observable } from "core/Misc/observable";
+// @ts-ignore
+import {Description, Radio} from '@geenee/ui/dist'
 
 interface IRadioButtonLineComponentProps {
     onSelectionChangedObservable: Observable<RadioButtonLineComponent>;
@@ -42,9 +44,9 @@ export class RadioButtonLineComponent extends React.Component<IRadioButtonLineCo
         return (
             <div className="radioLine">
                 {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} className="icon" />}
-                <div className="label" title={this.props.label}>
+                <Description size={'sm'}>
                     {this.props.label}
-                </div>
+                </Description>
                 <div className="radioContainer">
                     <input id={this.props.label} className="radio" type="radio" checked={this.state.isSelected} onChange={() => this.onChange()} />
                     <label htmlFor={this.props.label} className="labelForRadio" />

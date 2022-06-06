@@ -164,7 +164,10 @@ export class TreeItemComponent extends React.Component<ITreeItemComponentProps, 
         }
 
         if (!items.length) {
-            return <AssetsChevronPanel noChildren title={this.props.label}/>
+            return <ContextMenuTrigger id={"contextmenu#" + TreeItemComponent._ContextMenuUniqueIdGenerator}>
+                {this.renderContextMenu()}
+                <AssetsChevronPanel noChildren title={this.props.label}/>
+            </ContextMenuTrigger>
             return (
                 <div className="groupContainer" style={marginStyle}>
                     <ContextMenuTrigger id={"contextmenu#" + TreeItemComponent._ContextMenuUniqueIdGenerator}>
@@ -177,36 +180,39 @@ export class TreeItemComponent extends React.Component<ITreeItemComponentProps, 
 
         const sortedItems = Tools.SortAndFilter(null, items);
 
-      return <AssetsChevronPanel
-            title={this.props.label}
-            initialExpanded={false}
-        >
-             {/* <div className="groupContainer" style={marginStyle}>
-                  <ContextMenuTrigger id={"contextmenu#" + TreeItemComponent._ContextMenuUniqueIdGenerator}>
-                      {this.renderContextMenu()}
-                      <TreeItemExpandableHeaderComponent
-                          isExpanded={this.state.isExpanded}
-                          label={this.props.label}
-                          onClick={() => this.switchExpandedState()}
-                          onExpandAll={(expand) => this.expandAll(expand)}
-                      />
-                  </ContextMenuTrigger>
-              </div>*/}
-              {sortedItems.map((item) => {
-                  return (
-                      <TreeItemSelectableComponent
-                          mustExpand={this.state.mustExpand}
-                          extensibilityGroups={this.props.extensibilityGroups}
-                          key={item.uniqueId !== undefined && item.uniqueId !== null ? item.uniqueId : item.name}
-                          offset={this.props.offset + 1}
-                          selectedEntity={this.props.selectedEntity}
-                          entity={item}
-                          globalState={this.props.globalState}
-                          filter={this.props.filter}
-                      />
-                  );
-              })}
-        </AssetsChevronPanel>
+      return <ContextMenuTrigger id={"contextmenu#" + TreeItemComponent._ContextMenuUniqueIdGenerator}>
+          {this.renderContextMenu()}
+            <AssetsChevronPanel
+                title={this.props.label}
+                initialExpanded={false}
+            >
+                 {/* <div className="groupContainer" style={marginStyle}>
+                      <ContextMenuTrigger id={"contextmenu#" + TreeItemComponent._ContextMenuUniqueIdGenerator}>
+                          {this.renderContextMenu()}
+                          <TreeItemExpandableHeaderComponent
+                              isExpanded={this.state.isExpanded}
+                              label={this.props.label}
+                              onClick={() => this.switchExpandedState()}
+                              onExpandAll={(expand) => this.expandAll(expand)}
+                          />
+                      </ContextMenuTrigger>
+                  </div>*/}
+                  {sortedItems.map((item) => {
+                      return (
+                          <TreeItemSelectableComponent
+                              mustExpand={this.state.mustExpand}
+                              extensibilityGroups={this.props.extensibilityGroups}
+                              key={item.uniqueId !== undefined && item.uniqueId !== null ? item.uniqueId : item.name}
+                              offset={this.props.offset + 1}
+                              selectedEntity={this.props.selectedEntity}
+                              entity={item}
+                              globalState={this.props.globalState}
+                              filter={this.props.filter}
+                          />
+                      );
+                  })}
+            </AssetsChevronPanel>
+      </ContextMenuTrigger>
         /*if (!this.state.isExpanded) {
             console.log('render collapsed')
             return (

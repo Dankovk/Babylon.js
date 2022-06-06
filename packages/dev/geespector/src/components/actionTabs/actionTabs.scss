@@ -684,7 +684,7 @@ $line-padding-left: 2px;
                             display: none;
 
                             &:checked + label:before {
-                                border-color: rgb(51, 122, 183);
+                                border-color: #55E7D3;
                             }
                             &:checked + label:after {
                                 transform: scale(1);
@@ -715,12 +715,12 @@ $line-padding-left: 2px;
                                 border: 2px solid white;
                             }
                             &:after {
-                                top: 6px;
-                                left: 6px;
+                                top: 4px;
+                                left: 4px;
                                 width: 8px;
                                 height: 8px;
                                 transform: scale(0);
-                                background: rgb(51, 122, 183);
+                                background: #55E7D3;
                             }
                         }
                     }

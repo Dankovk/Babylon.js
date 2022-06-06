@@ -9,6 +9,8 @@ import { ColorPickerLineComponent } from "./colorPickerComponent";
 import type { LockObject } from "../tabs/propertyGrids/lockObject";
 import { TextInputLineComponent } from "./textInputLineComponent";
 import { conflictingValuesPlaceholder } from "./targetsProxy";
+// @ts-ignore
+import {Description} from "@geenee/ui/dist";
 
 import copyIcon from "./copy.svg";
 const emptyColor = new Color4(0, 0, 0, 0);
@@ -188,9 +190,9 @@ export class ColorLineComponent extends React.Component<IColorLineComponentProps
             <div className="color3Line">
                 <div className="firstLine">
                     {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} className="icon" />}
-                    <div className="label" title={this.props.label}>
+                    <Description size={'sm'}>
                         {this.props.label}
-                    </div>
+                    </Description>
                     <div className="color3">
                         <ColorPickerLineComponent
                             linearHint={this.props.isLinear}

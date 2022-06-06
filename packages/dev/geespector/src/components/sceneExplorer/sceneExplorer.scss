@@ -13,8 +13,13 @@
     display: none;
 }
 
+.react-contextmenu-wrapper {
+    width: 100%;
+}
+
 .context-menu {
     background: #222222;
+    color: #ffffff;
 
     .react-contextmenu-item {
         padding: 10px;

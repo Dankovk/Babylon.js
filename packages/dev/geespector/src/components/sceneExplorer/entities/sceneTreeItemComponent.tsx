@@ -425,7 +425,7 @@ export class SceneTreeItemComponent extends React.Component<ISceneTreeItemCompon
             <div className={this.state.isSelected ? "itemContainer selected" : "itemContainer"}>
                 <AssetsChevronPanel
                     title={'Scene'}
-                    icon={<FontAwesomeIcon icon={faImage} color={'#AEAEAE'}/>}
+                    icon={<FontAwesomeIcon icon={faImage} color={'#AEAEAE'} style={{marginBottom: 4}} />}
                     onTitleClick={() => this.onSelect()}
                     actions={
                         <div className="sceneNode">

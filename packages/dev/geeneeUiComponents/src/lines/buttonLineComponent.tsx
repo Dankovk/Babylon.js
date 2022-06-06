@@ -16,7 +16,8 @@ export class ButtonLineComponent extends React.Component<IButtonLineComponentPro
 
     render() {
         return (<div className="buttonLine">
-            <Button>
+            <Button onClick={() => this.props.onClick()}>
+                {this.props.icon && <img src={this.props.icon} title={this.props.iconLabel} alt={this.props.iconLabel} className="icon"/>}
                 {this.props.label}
             </Button>
         </div>)
