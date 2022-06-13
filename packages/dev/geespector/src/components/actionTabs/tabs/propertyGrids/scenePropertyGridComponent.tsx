@@ -27,6 +27,12 @@ import { ButtonLineComponent } from "shared-ui-components/lines/buttonLineCompon
 import { AnimationGridComponent } from "./animations/animationPropertyGridComponent";
 
 import "core/Physics/physicsEngineComponent";
+import {Node} from "core/node";
+import {Mesh} from "core/Meshes";
+import {BackgroundMaterial, PBRMaterial, StandardMaterial, Texture} from "core/Materials";
+import {Camera} from "core/Cameras";
+import {Light} from "core/Lights";
+import {GLTF2Export, GLTFData} from "serializers/glTF";
 
 interface IScenePropertyGridComponentProps {
     globalState: GlobalState;
@@ -36,9 +42,19 @@ interface IScenePropertyGridComponentProps {
     onSelectionChangedObservable?: Observable<any>;
 }
 
+interface IGlbExportOptions {
+    exportDisabledNodes: boolean;
+    exportSkyboxes: boolean;
+    exportCameras: boolean;
+    exportLights: boolean;
+}
+
 export class ScenePropertyGridComponent extends React.Component<IScenePropertyGridComponentProps> {
     private _storedEnvironmentTexture: Nullable<BaseTexture>;
     private _renderingModeGroupObservable = new Observable<RadioButtonLineComponent>();
+    private _gltfExportOptions: IGlbExportOptions = { exportDisabledNodes: false, exportSkyboxes: false, exportCameras: false, exportLights: false };
+    // @ts-ignore
+    private _isExportingGltf = false;
 
     constructor(props: IScenePropertyGridComponentProps) {
         super(props);
@@ -123,6 +139,59 @@ export class ScenePropertyGridComponent extends React.Component<IScenePropertyGr
             mesh.normalizeToUnitCube(true);
             mesh.computeWorldMatrix(true);
         });
+    }
+
+    exportGLTF() {
+        const scene = this.props.scene;
+        this._isExportingGltf = true;
+        this.forceUpdate();
+
+        const shouldExport = (node: Node): boolean => {
+            if (!this._gltfExportOptions.exportDisabledNodes) {
+                if (!node.isEnabled()) {
+                    return false;
+                }
+            }
+
+            if (!this._gltfExportOptions.exportSkyboxes) {
+                if (node instanceof Mesh) {
+                    if (node.material) {
+                        const material = node.material as PBRMaterial | StandardMaterial | BackgroundMaterial;
+                        const reflectionTexture = material.reflectionTexture;
+                        if (reflectionTexture && reflectionTexture.coordinatesMode === Texture.SKYBOX_MODE) {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            if (!this._gltfExportOptions.exportCameras) {
+                if (node instanceof Camera) {
+                    return false;
+                }
+            }
+
+            if (!this._gltfExportOptions.exportLights) {
+                if (node instanceof Light) {
+                    return false;
+                }
+            }
+
+            return true;
+        };
+
+
+        GLTF2Export.GLBAsync(scene, "scene", { shouldExportNode: (node) => shouldExport(node) }).then(
+            (glb: GLTFData) => {
+                this._isExportingGltf = false;
+                this.forceUpdate();
+                glb.downloadFiles();
+            },
+            () => {
+                this._isExportingGltf = false;
+                this.forceUpdate();
+            }
+        );
     }
 
     render() {
@@ -326,6 +395,9 @@ export class ScenePropertyGridComponent extends React.Component<IScenePropertyGr
                 </LineContainerComponent>
                 <LineContainerComponent title="SHADOWS" closed={true} selection={this.props.globalState}>
                     <ButtonLineComponent label="Normalize scene" onClick={() => this.normalizeScene()} />
+                </LineContainerComponent>
+                <LineContainerComponent title="EXPORT" closed={false} selection={this.props.globalState}>
+                    <ButtonLineComponent label="Export to GLB" onClick={() => this.exportGLTF()} />
                 </LineContainerComponent>
             </div>
         );

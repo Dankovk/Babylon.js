@@ -501,7 +501,7 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
                             filter={this.state.filter}
                         />
                     )}
-                    <TreeItemComponent
+                    {/*<TreeItemComponent
                         globalState={this.props.globalState}
                         extensibilityGroups={this.props.extensibilityGroups}
                         contextMenuItems={pipelineContextMenus}
@@ -510,8 +510,8 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
                         label="Rendering pipelines"
                         offset={1}
                         filter={this.state.filter}
-                    />
-                    {scene.effectLayers && scene.effectLayers.length > 0 && (
+                    />*/}
+                    {/*{scene.effectLayers && scene.effectLayers.length > 0 && (
                         <TreeItemComponent
                             globalState={this.props.globalState}
                             extensibilityGroups={this.props.extensibilityGroups}
@@ -521,8 +521,8 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
                             offset={1}
                             filter={this.state.filter}
                         />
-                    )}
-                    <TreeItemComponent
+                    )}*/}
+                    {/*<TreeItemComponent
                         globalState={this.props.globalState}
                         contextMenuItems={particleSystemsContextMenus}
                         extensibilityGroups={this.props.extensibilityGroups}
@@ -531,8 +531,8 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
                         label="Particle systems"
                         offset={1}
                         filter={this.state.filter}
-                    />
-                    <TreeItemComponent
+                    />*/}
+                    {/*<TreeItemComponent
                         globalState={this.props.globalState}
                         contextMenuItems={spriteManagersContextMenus}
                         forceSubitems={true}
@@ -542,7 +542,7 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
                         label="Sprite managers"
                         offset={1}
                         filter={this.state.filter}
-                    />
+                    />*/}
                     {guiElements && guiElements.length > 0 && (
                         <TreeItemComponent
                             globalState={this.props.globalState}
