@@ -221,7 +221,7 @@ export class ScenePropertyGridComponent extends React.Component<IScenePropertyGr
 
         return (
             <div className="pane">
-                <LineContainerComponent title="RENDERING MODE" selection={this.props.globalState}>
+                {this.props.globalState.isDevMode ? <LineContainerComponent title="RENDERING MODE" selection={this.props.globalState}>
                     <RadioButtonLineComponent
                         onSelectionChangedObservable={this._renderingModeGroupObservable}
                         label="Point"
@@ -240,7 +240,7 @@ export class ScenePropertyGridComponent extends React.Component<IScenePropertyGr
                         isSelected={() => !scene.forcePointsCloud && !scene.forceWireframe}
                         onSelect={() => this.setRenderingModes(false, false)}
                     />
-                </LineContainerComponent>
+                </LineContainerComponent> : <></>}
                 <LineContainerComponent title="ENVIRONMENT" selection={this.props.globalState}>
                     <Color3LineComponent label="Clear color" target={scene} propertyName="clearColor" onPropertyChangedObservable={this.props.onPropertyChangedObservable} />
                     <CheckBoxLineComponent
@@ -272,7 +272,7 @@ export class ScenePropertyGridComponent extends React.Component<IScenePropertyGr
                     />
                 </LineContainerComponent>
                 <AnimationGridComponent globalState={this.props.globalState} animatable={scene} scene={scene} lockObject={this.props.lockObject} />
-                <LineContainerComponent title="MATERIAL IMAGE PROCESSING" selection={this.props.globalState}>
+                {this.props.globalState.isDevMode ? <LineContainerComponent title="MATERIAL IMAGE PROCESSING" selection={this.props.globalState}>
                     <SliderLineComponent
                         minimum={0}
                         maximum={4}
@@ -370,7 +370,7 @@ export class ScenePropertyGridComponent extends React.Component<IScenePropertyGr
                         onPropertyChangedObservable={this.props.onPropertyChangedObservable}
                         onSelect={(value) => this.setState({ mode: value })}
                     />
-                </LineContainerComponent>
+                </LineContainerComponent> : <></>}
                 {dummy !== null && (
                     <LineContainerComponent title="PHYSICS" closed={true} selection={this.props.globalState}>
                         <FloatLineComponent
@@ -390,12 +390,12 @@ export class ScenePropertyGridComponent extends React.Component<IScenePropertyGr
                         />
                     </LineContainerComponent>
                 )}
-                <LineContainerComponent title="COLLISIONS" closed={true} selection={this.props.globalState}>
+                {this.props.globalState.isDevMode ? <LineContainerComponent title="COLLISIONS" closed={true} selection={this.props.globalState}>
                     <Vector3LineComponent label="Gravity" target={scene} propertyName="gravity" onPropertyChangedObservable={this.props.onPropertyChangedObservable} />
-                </LineContainerComponent>
-                <LineContainerComponent title="SHADOWS" closed={true} selection={this.props.globalState}>
+                </LineContainerComponent> : <></>}
+                {this.props.globalState.isDevMode ? <LineContainerComponent title="SHADOWS" closed={true} selection={this.props.globalState}>
                     <ButtonLineComponent label="Normalize scene" onClick={() => this.normalizeScene()} />
-                </LineContainerComponent>
+                </LineContainerComponent> : <></>}
                 <LineContainerComponent title="EXPORT" closed={false} selection={this.props.globalState}>
                     <ButtonLineComponent label="Export to GLB" onClick={() => this.exportGLTF()} />
                 </LineContainerComponent>

@@ -317,7 +317,7 @@ export class TexturePropertyGridComponent extends React.Component<ITextureProper
                 <LineContainerComponent title="GENERAL" selection={this.props.globalState}>
                     <TextLineComponent label="Width" value={texture.getSize().width.toString()} />
                     <TextLineComponent label="Height" value={texture.getSize().height.toString()} />
-                    {texture.isRenderTarget && (
+                    {this.props.globalState.isDevMode ? <>{texture.isRenderTarget && (
                         <ButtonLineComponent
                             label="Scale up"
                             onClick={() => {
@@ -403,6 +403,7 @@ export class TexturePropertyGridComponent extends React.Component<ITextureProper
                             onSelect={(value) => texture.updateSamplingMode(value)}
                         />
                     )}
+                    </> : <></>}
                 </LineContainerComponent>
                 {texture.getScene() && (
                     <AnimationGridComponent globalState={this.props.globalState} animatable={texture} scene={texture.getScene()!} lockObject={this.props.lockObject} />

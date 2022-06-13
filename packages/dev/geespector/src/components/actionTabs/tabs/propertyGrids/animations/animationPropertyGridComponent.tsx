@@ -172,7 +172,7 @@ export class AnimationGridComponent extends React.Component<IAnimationGridCompon
 
         return (
             <div>
-                {this._ranges.length > 0 && (
+                {this._ranges.length > 0 && this.props.globalState.isDevMode && (
                     <LineContainerComponent title="ANIMATION RANGES" selection={this.props.globalState}>
                         {this._ranges.map((range, i) => {
                             return (
@@ -188,7 +188,7 @@ export class AnimationGridComponent extends React.Component<IAnimationGridCompon
                         })}
                     </LineContainerComponent>
                 )}
-                {animations && (
+                {animations && this.props.globalState.isDevMode && (
                     <>
                         <LineContainerComponent title="ANIMATIONS" selection={this.props.globalState}>
                             <TextLineComponent label="Count" value={animations.length.toString()} />
