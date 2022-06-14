@@ -7,6 +7,8 @@ import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import type { PropertyChangedEvent } from "../../propertyChangedEvent";
 import { Tools } from "core/Misc/tools";
 import { FloatLineComponent } from "shared-ui-components/lines/floatLineComponent";
+// @ts-ignore
+import { Description } from '@geenee/ui/dist'
 
 interface IQuaternionLineComponentProps {
     label: string;
@@ -151,11 +153,13 @@ export class QuaternionLineComponent extends React.Component<IQuaternionLineComp
         return (
             <div className="vector3Line">
                 <div className="firstLine" title={this.props.label + " (Using Quaternion)"}>
-                    <div className="label">{this.props.label + " (Using Quaternion)"}</div>
-                    <div className="vector">
+                    {/*<div className="label">{this.props.label + " (Using Quaternion)"}</div>*/}
+                    <Description size="sm">{this.props.label + " (Using Quaternion)"}</Description>
+                    {/*<div className="vector">*/}
+                    <Description size="sm">
                         {!this.props.useEuler && `X: ${quat.x.toFixed(1)}, Y: ${quat.y.toFixed(1)}, Z: ${quat.z.toFixed(1)}, W: ${quat.w.toFixed(1)}`}
                         {this.props.useEuler && `X: ${eulerDegrees.x.toFixed(2)}, Y: ${eulerDegrees.y.toFixed(2)}, Z: ${eulerDegrees.z.toFixed(2)}`}
-                    </div>
+                    </Description>
                     <div className="expand" onClick={() => this.switchExpandState()}>
                         {chevron}
                     </div>

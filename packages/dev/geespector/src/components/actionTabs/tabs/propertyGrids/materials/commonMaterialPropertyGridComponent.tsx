@@ -154,48 +154,51 @@ export class CommonMaterialPropertyGridComponent extends React.Component<ICommon
                         onPropertyChangedObservable={this.props.onPropertyChangedObservable}
                         onSelect={(value) => this.setState({ depthFunction: value })}
                     />
-                    <CheckBoxLineComponent
-                        label="Need depth pre-pass"
-                        target={material}
-                        propertyName="needDepthPrePass"
-                        onPropertyChangedObservable={this.props.onPropertyChangedObservable}
-                    />
-                    <CheckBoxLineComponent label="Wireframe" target={material} propertyName="wireframe" onPropertyChangedObservable={this.props.onPropertyChangedObservable} />
-                    <CheckBoxLineComponent label="Point cloud" target={material} propertyName="pointsCloud" onPropertyChangedObservable={this.props.onPropertyChangedObservable} />
-                    <SliderLineComponent
-                        label="Point size"
-                        target={material}
-                        propertyName="pointSize"
-                        minimum={0}
-                        maximum={100}
-                        step={0.1}
-                        onPropertyChangedObservable={this.props.onPropertyChangedObservable}
-                    />
-                    <SliderLineComponent
-                        label="Z-offset Factor"
-                        target={material}
-                        propertyName="zOffset"
-                        minimum={-10}
-                        maximum={10}
-                        step={0.1}
-                        onPropertyChangedObservable={this.props.onPropertyChangedObservable}
-                    />
-                    <SliderLineComponent
-                        label="Z-offset Units"
-                        target={material}
-                        propertyName="zOffsetUnits"
-                        minimum={-10}
-                        maximum={10}
-                        step={0.1}
-                        onPropertyChangedObservable={this.props.onPropertyChangedObservable}
-                    />
-                    <ButtonLineComponent
-                        label="Dispose"
-                        onClick={() => {
-                            material.dispose();
-                            this.props.globalState.onSelectionChangedObservable.notifyObservers(null);
-                        }}
-                    />
+                    {this.props.globalState.isDevMode ?
+                        <>
+                            <CheckBoxLineComponent
+                                label="Need depth pre-pass"
+                                target={material}
+                                propertyName="needDepthPrePass"
+                                onPropertyChangedObservable={this.props.onPropertyChangedObservable}
+                            />
+                            <CheckBoxLineComponent label="Wireframe" target={material} propertyName="wireframe" onPropertyChangedObservable={this.props.onPropertyChangedObservable} />
+                            <CheckBoxLineComponent label="Point cloud" target={material} propertyName="pointsCloud" onPropertyChangedObservable={this.props.onPropertyChangedObservable} />
+                            <SliderLineComponent
+                                label="Point size"
+                                target={material}
+                                propertyName="pointSize"
+                                minimum={0}
+                                maximum={100}
+                                step={0.1}
+                                onPropertyChangedObservable={this.props.onPropertyChangedObservable}
+                            />
+                            <SliderLineComponent
+                                label="Z-offset Factor"
+                                target={material}
+                                propertyName="zOffset"
+                                minimum={-10}
+                                maximum={10}
+                                step={0.1}
+                                onPropertyChangedObservable={this.props.onPropertyChangedObservable}
+                            />
+                            <SliderLineComponent
+                                label="Z-offset Units"
+                                target={material}
+                                propertyName="zOffsetUnits"
+                                minimum={-10}
+                                maximum={10}
+                                step={0.1}
+                                onPropertyChangedObservable={this.props.onPropertyChangedObservable}
+                            />
+                            <ButtonLineComponent
+                                label="Dispose"
+                                onClick={() => {
+                                    material.dispose();
+                                    this.props.globalState.onSelectionChangedObservable.notifyObservers(null);
+                                }}
+                            />
+                    </> : <></>}
                 </LineContainerComponent>
                 <LineContainerComponent title="TRANSPARENCY" selection={this.props.globalState}>
                     <SliderLineComponent
@@ -265,7 +268,7 @@ export class CommonMaterialPropertyGridComponent extends React.Component<ICommon
                         onPropertyChangedObservable={this.props.onPropertyChangedObservable}
                     />
                 </LineContainerComponent>
-                {material.stencil && (
+                {material.stencil && this.props.globalState.isDevMode && (
                     <>
                         <LineContainerComponent title="STENCIL" selection={this.props.globalState}>
                             <CheckBoxLineComponent

@@ -430,7 +430,7 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
             });
         }
 
-        const rootNodes = scene.rootNodes.slice(0);
+        const rootNodes = this.props.globalState.isDevMode ? scene.rootNodes.slice(0) : scene.rootNodes.slice(0).filter(el => el.id !== 'Camera' && el.id !== 'grid')
 
         // Adding nodes parented to a bone
         for (const mesh of scene.meshes) {

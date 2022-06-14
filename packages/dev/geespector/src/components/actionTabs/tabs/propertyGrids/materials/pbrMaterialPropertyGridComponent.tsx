@@ -359,7 +359,7 @@ export class PBRMaterialPropertyGridComponent extends React.Component<IPBRMateri
                         onDebugSelectionChangeObservable={this._onDebugSelectionChangeObservable}
                     />
                 </LineContainerComponent>
-                <LineContainerComponent title="CLEAR COAT" selection={this.props.globalState}>
+                {this.props.globalState.isDevMode ? <> <LineContainerComponent title="CLEAR COAT" selection={this.props.globalState}>
                     <CheckBoxLineComponent
                         label="Enabled"
                         target={material.clearCoat}
@@ -848,7 +848,7 @@ export class PBRMaterialPropertyGridComponent extends React.Component<IPBRMateri
                             />
                         </div>
                     )}
-                </LineContainerComponent>
+                    </LineContainerComponent> </> : <></>}
                 <LineContainerComponent title="LEVELS" closed={true} selection={this.props.globalState}>
                     <SliderLineComponent
                         label="Environment"
@@ -1028,7 +1028,7 @@ export class PBRMaterialPropertyGridComponent extends React.Component<IPBRMateri
                         </>
                     )}
                 </LineContainerComponent>
-                <LineContainerComponent title="RENDERING" closed={true} selection={this.props.globalState}>
+                {this.props.globalState.isDevMode ? <><LineContainerComponent title="RENDERING" closed={true} selection={this.props.globalState}>
                     <CheckBoxLineComponent
                         label="Alpha from albedo"
                         target={material}
@@ -1144,6 +1144,7 @@ export class PBRMaterialPropertyGridComponent extends React.Component<IPBRMateri
                         onPropertyChangedObservable={this.props.onPropertyChangedObservable}
                     />
                 </LineContainerComponent>
+                </> : <></>}
             </div>
         );
     }

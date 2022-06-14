@@ -1,6 +1,6 @@
 import * as React from "react";
 // @ts-ignore
-import {Description} from '@geenee/ui/dist';
+import {Description, Link} from '@geenee/ui/dist';
 
 interface ITextLineComponentProps {
     label?: string;
@@ -40,9 +40,7 @@ export class TextLineComponent extends React.Component<ITextLineComponentProps> 
 
         if (this.props.onLink || this.props.url) {
             return (
-                <div className="link-value" title={this.props.value} onClick={() => this.onLink()}>
-                    {this.props.url ? "doc" : this.props.value || "no name"}
-                </div>
+                <Link style={{margin: 0}} onClick={() => this.onLink()}>{this.props.url ? "doc" : this.props.value || "no name"}</Link>
             );
         }
         return (

@@ -126,6 +126,12 @@ export class SceneTreeItemComponent extends React.Component<ISceneTreeItemCompon
                 }
             }
         });
+        // @ts-ignore
+        window.GeeneeAR = {
+            // @ts-ignore
+            ...window.GeeneeAR,
+            setGizmoMode: (v: any) => this.setGizmoMode(v)
+        }
     }
 
     componentWillUnmount() {
