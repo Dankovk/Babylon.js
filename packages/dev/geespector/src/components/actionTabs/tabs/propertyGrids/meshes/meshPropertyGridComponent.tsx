@@ -498,7 +498,7 @@ export class MeshPropertyGridComponent extends React.Component<
                     )}
                     <Vector3LineComponent label="Scaling" target={mesh} propertyName="scaling" onPropertyChangedObservable={this.props.onPropertyChangedObservable} />
                 </LineContainerComponent>
-                <LineContainerComponent title="DISPLAY" closed={true} selection={this.props.globalState}>
+                {this.props.globalState.isDevMode && <LineContainerComponent title="DISPLAY" closed={true} selection={this.props.globalState}>
                     {!mesh.isAnInstance && (
                         <SliderLineComponent
                             label="Visibility"
@@ -568,8 +568,8 @@ export class MeshPropertyGridComponent extends React.Component<
                         propertyName="layerMask"
                         onPropertyChangedObservable={this.props.onPropertyChangedObservable}
                     />
-                </LineContainerComponent>
-                {mesh.morphTargetManager != null && (
+                </LineContainerComponent>}
+                {mesh.morphTargetManager != null && this.props.globalState.isDevMode && (
                     <LineContainerComponent title="MORPH TARGETS" closed={true} selection={this.props.globalState}>
                         {morphTargets.map((mt, i) => {
                             return (
@@ -588,7 +588,7 @@ export class MeshPropertyGridComponent extends React.Component<
                     </LineContainerComponent>
                 )}
                 <AnimationGridComponent globalState={this.props.globalState} animatable={mesh} scene={mesh.getScene()} lockObject={this.props.lockObject} />
-                <LineContainerComponent title="ADVANCED" closed={true} selection={this.props.globalState}>
+                {this.props.globalState.isDevMode && <LineContainerComponent title="ADVANCED" closed={true} selection={this.props.globalState}>
                     {mesh.useBones && (
                         <CheckBoxLineComponent
                             label="Compute bones using shaders"
@@ -608,7 +608,7 @@ export class MeshPropertyGridComponent extends React.Component<
                     <TextLineComponent label="Has tangents" value={mesh.isVerticesDataPresent(VertexBuffer.TangentKind) ? "Yes" : "No"} />
                     <TextLineComponent label="Has matrix weights" value={mesh.isVerticesDataPresent(VertexBuffer.MatricesWeightsKind) ? "Yes" : "No"} />
                     <TextLineComponent label="Has matrix indices" value={mesh.isVerticesDataPresent(VertexBuffer.MatricesIndicesKind) ? "Yes" : "No"} />
-                </LineContainerComponent>
+                </LineContainerComponent>}
                 {mesh.physicsImpostor != null && (
                     <LineContainerComponent title="PHYSICS" closed={true} selection={this.props.globalState}>
                         <FloatLineComponent
@@ -635,7 +635,7 @@ export class MeshPropertyGridComponent extends React.Component<
                         <TextLineComponent label="Type" value={this.convertPhysicsTypeToString()} />
                     </LineContainerComponent>
                 )}
-                <LineContainerComponent title="OCCLUSIONS" closed={true} selection={this.props.globalState}>
+                {this.props.globalState.isDevMode && <LineContainerComponent title="OCCLUSIONS" closed={true} selection={this.props.globalState}>
                     <OptionsLineComponent
                         label="Type"
                         options={occlusionTypeOptions}
@@ -660,8 +660,8 @@ export class MeshPropertyGridComponent extends React.Component<
                         propertyName="occlusionQueryAlgorithmType"
                         onPropertyChangedObservable={this.props.onPropertyChangedObservable}
                     />
-                </LineContainerComponent>
-                <LineContainerComponent title="EDGE RENDERING" closed={true} selection={this.props.globalState}>
+                </LineContainerComponent>}
+                {this.props.globalState.isDevMode && <LineContainerComponent title="EDGE RENDERING" closed={true} selection={this.props.globalState}>
                     <CheckBoxLineComponent
                         label="Enable"
                         target={mesh}
@@ -685,8 +685,8 @@ export class MeshPropertyGridComponent extends React.Component<
                         onPropertyChangedObservable={this.props.onPropertyChangedObservable}
                     />
                     <Color3LineComponent label="Edge color" target={mesh} propertyName="edgesColor" onPropertyChangedObservable={this.props.onPropertyChangedObservable} />
-                </LineContainerComponent>
-                {!mesh.isAnInstance && (
+                </LineContainerComponent>}
+                {!mesh.isAnInstance && this.props.globalState.isDevMode && (
                     <LineContainerComponent title="OUTLINE & OVERLAY" closed={true} selection={this.props.globalState}>
                         <CheckBoxLineComponent
                             label="Render overlay"
@@ -704,7 +704,7 @@ export class MeshPropertyGridComponent extends React.Component<
                         <Color3LineComponent label="Outline color" target={mesh} propertyName="outlineColor" onPropertyChangedObservable={this.props.onPropertyChangedObservable} />
                     </LineContainerComponent>
                 )}
-                <LineContainerComponent title="DEBUG" closed={true} selection={this.props.globalState}>
+                {this.props.globalState.isDevMode && <LineContainerComponent title="DEBUG" closed={true} selection={this.props.globalState}>
                     {!mesh.isAnInstance && <CheckBoxLineComponent label="Display normals" isSelected={() => displayNormals} onSelect={() => this.displayNormals()} />}
                     {!mesh.isAnInstance && (
                         <CheckBoxLineComponent label="Display vertex colors" isSelected={() => displayVertexColors} onSelect={() => this.displayVertexColors()} />
@@ -749,7 +749,7 @@ export class MeshPropertyGridComponent extends React.Component<
                     {!mesh.isAnInstance && mesh.skeleton && (
                         <CheckBoxLineComponent label="Display SkeletonMap" isSelected={() => displaySkeletonMap} onSelect={() => this.displaySkeletonMap()} />
                     )}
-                </LineContainerComponent>
+                </LineContainerComponent>}
             </div>
         );
     }
